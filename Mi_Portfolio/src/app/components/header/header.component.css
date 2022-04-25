@@ -1,5 +1,7 @@
 div{
     background-color: rgb(71, 235, 6);
+    margin:0;
+    width: 100%;
 }
 
 app-social{
