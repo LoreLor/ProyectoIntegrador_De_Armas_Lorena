@@ -1,13 +1,16 @@
+div{
+  background-color: rgb(215, 247, 203);
+
+}
+
 .row{
     padding: 25px;
+
 }
 
-div{
-    background-color: rgb(215, 247, 203);
-}
-
-h1, h3{
-    display: inline;
+img{
+    width: 10%;
+    margin:5px;  
 }
 
 h1 {
