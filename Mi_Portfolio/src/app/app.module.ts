@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,23 @@ import { EducacionComponent } from './components/educacion/educacion.component';
     BannerComponent,
     AcercaDeComponent,
     ExperienciaComponent,
-    EducacionComponent
+    EducacionComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      // radius: 100,
+      // outerStrokeWidth: 16,
+      // innerStrokeWidth: 8,
+      // outerStrokeColor: "#78C000",
+      // innerStrokeColor: "#C7E596",
+      // animationDuration: 300,
+    
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
