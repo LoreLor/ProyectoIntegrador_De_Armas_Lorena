@@ -3,10 +3,12 @@
 }
 
 div{
-    background-color: #d7f7cb;
+  background-color: rgb(215, 247, 203);
+  margin-top: 25px;
 }
 
-h1, h3{
+
+h2,h3{
     display: inline;
 }
 
