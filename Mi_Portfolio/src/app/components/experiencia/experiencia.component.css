@@ -1,5 +1,5 @@
 .row{
-    padding: 20px;
+    padding: 25px;
 }
 
 div{
@@ -9,3 +9,20 @@ div{
 h1, h3{
     display: inline;
 }
+
+h1 {
+    animation-duration: 6s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
