@@ -1,7 +1,21 @@
 #logoAP{
     width: 200px;
     margin-top: 3px;
-    margin-left: 5px;
-    margin-bottom: 3px;
+    margin-left: 10px;
     border-radius: 10px;
+}
+.redes img{
+    width: 40px;
+    margin-left:20px;   
+}
+.redes img:hover{
+    transform: scale(1.5);
+    background-color: darkorange;
+    border-radius: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
