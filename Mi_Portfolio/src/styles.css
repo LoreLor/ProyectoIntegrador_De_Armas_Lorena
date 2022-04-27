@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     background-color: rgb(71, 235, 6);
-}
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: auto !important;
+  }
