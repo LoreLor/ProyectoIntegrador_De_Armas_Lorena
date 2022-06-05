@@ -1,0 +1,48 @@
+#logoAP{
+    width: 200px;
+    margin-top: 3px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.redes img{
+    width: 40px;
+    margin-left:0.8em;   
+    margin-right: 0.8em;
+}
+.redes img:hover{
+    transform: scale(1.5);
+    background-color: darkorange;
+    border-radius: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:5%;
+}
+
+.btn{
+    border-width:2px;
+    margin: 10px;
+}
+.btn:hover{
+    transform: scale(1.3);
+    background-color: darkorange;
+    color: white;
+    border-width:2px;
+   
+}
+
+/*para vista celular*/
+@media(max-width:575px){
+.container{
+    flex-direction: column;
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+}

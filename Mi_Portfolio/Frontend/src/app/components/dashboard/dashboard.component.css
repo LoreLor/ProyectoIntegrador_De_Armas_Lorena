@@ -1,0 +1,19 @@
+div{
+    background-color: rgb(215, 247, 203);
+    
+  }
+
+.container{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn{
+    border-color: #5a22c3;
+}
+.btn:hover{
+    background: linear-gradient(90deg, #5a22c3, #d0fd2d);
+    border: linear-gradient(90deg, #5a22c3, #d0fd2d);   
+   
+    color:aliceblue;
+}

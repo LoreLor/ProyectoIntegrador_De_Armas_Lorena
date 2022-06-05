@@ -1,0 +1,10 @@
+footer{
+    color: rgb(30, 68, 5);
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 5px -5px 20px rgb(33, 34, 32);
+
+}

@@ -1,0 +1,54 @@
+ #fotoPerfil{
+   margin-top: 20px;
+    width: 70%; 
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px black;
+
+}
+
+
+.row{
+    padding: 25px;
+}
+div{
+    background-color: rgb(71, 235, 6);
+    text-align: center;
+}
+
+/*etiqueta nombre*/
+#nombre{
+    font-weight: bold;
+    font-size: 1.5rem ;
+    margin-top: 8px;
+    color:rgb(39, 44, 39)
+}
+
+/*etiqueta fullstack*/
+#titulo{
+    font-weight: bold;
+    font-size: 1rem ;
+    margin-top: 30px;
+    color: rgb(26, 25, 24);
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+ 
+}
+
+h1,h2 {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  .settings{
+    margin-top: 30px;
+  }

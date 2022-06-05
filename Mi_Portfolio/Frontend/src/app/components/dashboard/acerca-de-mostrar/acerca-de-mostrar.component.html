@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <h3>Persona</h3>
+    </div>
+    <div class="card body">
+        <div class="atributos" *ngFor="let persona of personas">
+            <label>
+                <strong>ID: </strong> 
+                {{persona.id}}
+            </label>
+            <label>
+                <strong>Nombres:</strong> 
+                {{persona.nombres}}
+            </label>
+            <label>
+                <strong>Apellidos:</strong> 
+                {{persona.apellidos}}
+            </label>
+            <label>
+                <strong>Titulo:</strong> 
+                {{persona.titulo}}
+            </label>
+            <label>
+                <strong>Descripcion:</strong> 
+                {{persona.descripcion}}
+            </label>
+            <label>
+                <strong>Imagen de Perfil:</strong> 
+                {{persona.imagenPerfil}}
+            </label>
+            <div>
+                <button (click)="editarPersona(persona.id)" class="btn btn-ligth" style="width: 100px;">Editar</button>
+                <button (click)="eliminarPersona(persona)" class="btn btn-ligth" style="margin-left:10px; width: 100px;">Eliminar</button>
+                <button (click)="postearPersona()" class="btn btn-ligth" style="margin-left:10px; width: 100px;">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>

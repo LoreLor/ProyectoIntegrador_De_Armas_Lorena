@@ -1,0 +1,66 @@
+<div class="container col-md-6">
+    <div class="card">
+        <h3>Agregar Personas</h3>
+    </div>
+    <div class="card body">
+        <form action="">
+            <div class="form-group">
+                <label for="nombres">Nombres:</label>
+                <input 
+                    type="text" 
+                    id="nombres" 
+                    name="nombres"
+                    class="form-control" 
+                    placeholder="introduce tus nombres"
+                    [(ngModel)]="persona.nombres"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input 
+                    type="text" 
+                    id="apellidos" 
+                    name="apellidos"  
+                    class="form-control"
+                    placeholder="introduce tus apellidos"
+                    [(ngModel)]="persona.apellidos"
+                    
+                    >
+                </div>
+            <div class="form-group">
+                <label for="apellidos">Titulo:</label>
+                <input 
+                type="text" 
+                    id="titulo" 
+                    name="titulo"  
+                    class="form-control"
+                    placeholder="ocupacion"
+                    [(ngModel)]="persona.titulo"
+                    >
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion:</label>
+                <input 
+                type="text" 
+                id="descripcion" 
+                name="descripcion"  
+                class="form-control"
+                placeholder="introduce una breve descripcion acerca de ti"
+                [(ngModel)]="persona.descripcion" 
+                >
+            </div>
+            <div class="form-group">
+                <label for="imagenPerfil">Imagen de Perfil:</label>
+                <input 
+                type="file" 
+                id="imagenPerfil" 
+                name="imagenPerfil"  
+                class="form-control"
+                placeholder="introduce una imagen"
+                [(ngModel)]="persona.imagenPerfil"
+                >
+            </div>
+            <button  (click)="guardar()" class="btn btn-ligth">Guardar</button>
+        </form>
+    </div>
+</div>

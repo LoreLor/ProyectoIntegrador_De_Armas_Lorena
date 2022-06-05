@@ -1,0 +1,30 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    background-color: rgb(229, 199, 241);
+    color: rgb(4, 3, 59);
+}
+
+.btn{
+    margin-top: 15px;
+    border-color: #10dd09;
+}
+.btn:hover{
+    background: linear-gradient(90deg, #10dd09, #d0d308);
+    border: linear-gradient(90deg, #10dd09, #d0d308);    
+    color:aliceblue;
+}
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+   
+}
+
+  label{
+    margin: 5px;
+}
