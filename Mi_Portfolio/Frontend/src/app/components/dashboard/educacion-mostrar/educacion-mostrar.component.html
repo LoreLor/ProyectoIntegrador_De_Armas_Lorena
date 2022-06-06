@@ -1,1 +1,31 @@
-<p>educacion-mostrar works!</p>
+<div class="container">
+    <div class="card">
+        <h3>Educacion</h3>
+    </div>
+    <div class="card body">
+        <div class="atributos" *ngFor="let educacion of educaciones">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Institucion</th>
+                    <th scope="col">Anios</th>
+                    <th scope="col">Carrera</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider" *ngFor="let educacion of educaciones">  
+                  <tr>
+                    <th scope="row">{{educacion.id}}</th>
+                    <td>{{educacion.nombre}}</td>
+                    <td>{{educacion.anios}}</td>
+                    <td>{{educacion.descripcion}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            <div>            
+                <button (click)="eliminarEducacion(educacion)" class="btn btn-ligth" style="margin-left:10px; width: 100px;">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

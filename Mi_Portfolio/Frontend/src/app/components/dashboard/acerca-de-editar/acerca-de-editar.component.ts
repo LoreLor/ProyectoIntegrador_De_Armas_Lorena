@@ -32,6 +32,7 @@ export class AcercaDeEditarComponent implements OnInit {
       console.log(data)
         alert("Datos modificados con exito");
         this.router.navigate(["dashboard"])
+        window.location.reload()
     })  
   }
 

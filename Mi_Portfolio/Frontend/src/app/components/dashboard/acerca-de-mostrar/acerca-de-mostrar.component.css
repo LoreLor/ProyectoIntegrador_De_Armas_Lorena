@@ -17,8 +17,7 @@
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);   
-   
+    border: linear-gradient(90deg, #10dd09, #d0d308);      
     color:aliceblue;
 }
 .container{
