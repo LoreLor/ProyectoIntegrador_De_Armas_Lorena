@@ -27,3 +27,19 @@ label{
     margin: 5px;
 }
 
+.accordion{
+    display: block;
+    width: 70%;
+}
+.accordion-button{
+    background-color:#10dd09;
+    color: white;
+    font-weight: 700;
+    
+}
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    font-weight: 600;
+}
+

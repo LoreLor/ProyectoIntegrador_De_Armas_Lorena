@@ -6,10 +6,10 @@ import { AcercaDeMostrarComponent } from './components/dashboard/acerca-de-mostr
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  
-  {path: 'mostrarPersona', component: AcercaDeMostrarComponent},
+  {path:'dashboard', component: DashboardComponent}
+  /*{path: 'mostrarPersona', component: AcercaDeMostrarComponent},
   {path: 'agregarPersona', component: AcercaDeAgregarComponent},
-  {path: 'editarPersona', component: AcercaDeEditarComponent}
+  {path: 'editarPersona', component: AcercaDeEditarComponent}*/
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@
 }
 
 .btn{
-    margin-top: 15px;
+   margin-top: 15px;
     border-color: #10dd09;
 }
 .btn:hover{
@@ -22,9 +22,25 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-   
+}
+label{
+    margin: 5px;
 }
 
-  label{
-    margin: 5px;
+.accordion{
+    display: block;
+    width: 70%;
+}
+.accordion-button{
+    background-color:#10dd09;
+    color: white;
+    font-weight: 700;
+    
+}
+
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    color:rgb(4, 3, 59);
+    font-weight: 600;
 }
