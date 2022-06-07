@@ -20,7 +20,4 @@ export class DashboardComponent implements OnInit {
       this.personas=data; 
   })
   }
-  
-  
-
 }

@@ -16,8 +16,8 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.getEducacion()
-      .subscribe(data => {
-        this.educaciones;
+      .subscribe((data:any) => {
+        this.educaciones=data;
       })
   }
 }

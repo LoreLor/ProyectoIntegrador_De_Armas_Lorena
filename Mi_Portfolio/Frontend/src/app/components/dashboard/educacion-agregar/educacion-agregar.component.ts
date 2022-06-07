@@ -23,6 +23,7 @@ export class EducacionAgregarComponent implements OnInit {
         console.log(data)
         alert("Educacion agregada con exito");
         this.router.navigate(["dashboard"])
+        window.location.reload()
       })
   }
 
