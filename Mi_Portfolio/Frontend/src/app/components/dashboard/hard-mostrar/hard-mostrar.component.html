@@ -1,1 +1,31 @@
-<p>hard-mostrar works!</p>
+
+<div class="container">
+    <div class="card">
+        <h3>Hard Skills</h3>
+    </div>
+    <div class="card body">
+        <div class="atributos">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Percent</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider" >  
+                  <tr *ngFor="let hard of hards">
+                    <th scope="row">{{hard.id}}</th>
+                    <td>{{hard.title}}</td>
+                    <td>{{hard.percent}}</td>
+                    <button (click)="eliminarHard(hard)" class="btn btn-ligth" style="margin-left:10px; width: 100px;">Eliminar</button>
+                  </tr>
+                </tbody>
+              </table>
+              <div>            
+              </div>
+        </div>
+    </div>
+</div>
+
+

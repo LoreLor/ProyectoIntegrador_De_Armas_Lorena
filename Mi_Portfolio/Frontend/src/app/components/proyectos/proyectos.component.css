@@ -1,5 +1,5 @@
 .row{
-    padding: 25px;
+    padding: 10px;
 }
 
 .contenedor{
@@ -15,9 +15,12 @@
     box-shadow: 10px 10px 30px rgb(13, 14, 13);
 }
 
-div{
-    background-color: rgb(215, 247, 203);
-    margin-top: 25px;
+.row{
+  max-width: 100%;
+  background-color: rgb(215, 247, 203);
+  margin-top: 25px;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 h1 {

@@ -10,11 +10,8 @@
     flex-direction: column;
     align-items: center;
 }
-.btn{
-    
-    border-color: #10dd09;
-
-    
+.btn{  
+    border-color: #10dd09;   
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
@@ -33,4 +30,5 @@
 }
 .table{
     font-size:0.8rem;
+    display:grid;
 }

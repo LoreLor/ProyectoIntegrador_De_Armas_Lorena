@@ -21,11 +21,13 @@ import { AcercaDeMostrarComponent } from './components/dashboard/acerca-de-mostr
 import { EducacionEditarComponent } from './components/dashboard/educacion-editar/educacion-editar.component';
 import { EducacionAgregarComponent } from './components/dashboard/educacion-agregar/educacion-agregar.component';
 import { EducacionMostrarComponent } from './components/dashboard/educacion-mostrar/educacion-mostrar.component';
-import { EducacionEliminarComponent } from './components/dashboard/educacion-eliminar/educacion-eliminar.component';
 import { ExperienciaEditarComponent } from './components/dashboard/experiencia-editar/experiencia-editar.component';
 import { ExperienciaAgregarComponent } from './components/dashboard/experiencia-agregar/experiencia-agregar.component';
 import { ExperienciaEliminarComponent } from './components/dashboard/experiencia-eliminar/experiencia-eliminar.component';
 import { ExperienciaMostrarComponent } from './components/dashboard/experiencia-mostrar/experiencia-mostrar.component';
+import { HardMostrarComponent } from './components/dashboard/hard-mostrar/hard-mostrar.component';
+import { HardAgregarComponent } from './components/dashboard/hard-agregar/hard-agregar.component';
+import { HardEditarComponent } from './components/dashboard/hard-editar/hard-editar.component';
 import { ProyectosEditarComponent } from './components/dashboard/proyectos-editar/proyectos-editar.component';
 import { ProyectosAgregarComponent } from './components/dashboard/proyectos-agregar/proyectos-agregar.component';
 import { ProyectosMostrarComponent } from './components/dashboard/proyectos-mostrar/proyectos-mostrar.component';
@@ -48,6 +50,9 @@ import { HttpClientModule } from '@angular/common/http';
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
+    HardMostrarComponent,
+    HardAgregarComponent,
+    HardEditarComponent,
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
@@ -58,7 +63,6 @@ import { HttpClientModule } from '@angular/common/http';
     EducacionEditarComponent,
     EducacionAgregarComponent,
     EducacionMostrarComponent,
-    EducacionEliminarComponent,
     ExperienciaEditarComponent,
     ExperienciaAgregarComponent,
     ExperienciaEliminarComponent,
