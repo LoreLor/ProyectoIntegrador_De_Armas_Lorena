@@ -1,1 +1,35 @@
-<p>hard-agregar works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <h3>Agregar Hard Skill</h3>
+    </div>
+    <div class="card body">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        AGREGAR
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label  class="labelform" for="nombres">Nombre:</label>
+                                <input type="text" id="title" name="title" class="form-control"
+                                    placeholder="introduce nombre de tu skill" [(ngModel)]="hard.title">
+                            </div>
+                            <div class="form-group">
+                                <label class="labelform" for="percent">Pocentaje:</label>
+                                <input type="number"min="1" max="100" id="percent" name="percent" class="form-control"
+                                    placeholder="introduce un porcentaje" [(ngModel)]="hard.percent">
+                            </div>
+                            <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

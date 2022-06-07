@@ -1,20 +1,20 @@
 <div class="row" >
     
-        <div  *ngFor="let persona of personas" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <img src="../../../assets/yo2.png" alt="fotoPerfil" class="img-fluid" id="fotoPerfil">
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" *ngFor="let persona of personas">
-            <h2 id="nombre">{{persona.nombres}} {{persona.apellidos}}</h2>
-            <h2 id="titulo">{{persona.titulo}} </h2>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
-            <span *ngFor="let persona of personas">
-                <h1>Acerca de </h1>
-                <p>{{persona.descripcion}}
-                </p>
-            </span>
-        </div>
+    <div  *ngFor="let persona of personas" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <img src="../../../assets/{{persona.imagenPerfil}}" alt="fotoPerfil" class="img-fluid" id="fotoPerfil">
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" *ngFor="let persona of personas">
+        <h2 id="nombre">{{persona.nombres}} {{persona.apellidos}}</h2>
+        <h2 id="titulo">{{persona.titulo}} </h2>
+    </div>
+    
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-7">
+        <span *ngFor="let persona of personas">
+            <h1>Acerca de </h1>
+            <p>{{persona.descripcion}}
+            </p>
+        </span>
+    </div>
     
 </div>
 

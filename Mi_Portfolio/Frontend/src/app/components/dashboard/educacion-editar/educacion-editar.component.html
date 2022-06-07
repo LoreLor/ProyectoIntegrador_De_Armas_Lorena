@@ -1,1 +1,41 @@
-<p>educacion-editar works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <h3>Editar Educacion</h3>
+    </div>
+    <div class="card body">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        EDITAR
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label class="labelform" for="nombres">Carrera:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control"
+                                    [(ngModel)]="educacion.nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="labelform" for="anios">Años:</label>
+                                <input type="text" id="anios" name="anios" class="form-control"
+                                    placeholder="introduce los años de cursada" [(ngModel)]="educacion.anios">
+                            </div>
+                            <div class="form-group">
+                                <label class="labelform" for="descripcion">Institucion:</label>
+                                <input type="text" id="titulo" name="titulo" class="form-control"
+                                    placeholder="institucion" [(ngModel)]="educacion.descripcion">
+                            </div>
+                            <button (click)="actualizar()" class="btn btn-ligth">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

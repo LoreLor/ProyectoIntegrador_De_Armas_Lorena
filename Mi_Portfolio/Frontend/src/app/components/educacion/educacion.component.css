@@ -1,10 +1,10 @@
 .row{
-    padding: 25px;
-}
-
-div{
+  padding: 25px;
+  max-width: 100%;
   background-color: rgb(215, 247, 203);
   margin-top: 25px;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 

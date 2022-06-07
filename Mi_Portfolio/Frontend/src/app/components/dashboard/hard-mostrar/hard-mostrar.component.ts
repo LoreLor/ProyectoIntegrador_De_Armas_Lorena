@@ -1,4 +1,7 @@
+import { HardService } from './../../../service/api/hard.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Hard } from 'src/app/models/Hard';
 
 @Component({
   selector: 'app-hard-mostrar',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hard-mostrar.component.css']
 })
 export class HardMostrarComponent implements OnInit {
+  hards:Hard[] =[];
+  hard:Hard = new Hard;
 
-  constructor() { }
+  constructor(private router:Router, private http:HardService) { }
 
   ngOnInit(): void {
+    this.http.getHard()
+    .subscribe((data:any) => 
+    this.hards = data
+    )
   }
-
+  eliminarHard(hard:Hard){
+    this.http.deleteHard(hard)
+    .subscribe((data:any)=>{
+      this.hards=this.hards.filter(p=>p !== hard)
+      this.router.navigate(["dashboard"])
+    })
+  }
 }
