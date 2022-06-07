@@ -11,9 +11,10 @@
     align-items: center;
 }
 .btn{
-    margin-top: 15px;
+    
     border-color: #10dd09;
-    margin-bottom: 15px;
+
+    
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
@@ -29,4 +30,7 @@
 .labelform {
     display: flex;
     align-items: flex-start;
+}
+.table{
+    font-size:0.8rem;
 }

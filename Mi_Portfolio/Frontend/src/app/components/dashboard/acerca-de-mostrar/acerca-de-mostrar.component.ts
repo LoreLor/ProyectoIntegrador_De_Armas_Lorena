@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/service/api/persona.service';
   styleUrls: ['./acerca-de-mostrar.component.css']
 })
 export class AcercaDeMostrarComponent implements OnInit {
-  personas: Persona[] =[];
+  personas: Persona[] = [];
   persona: Persona = new Persona; 
   constructor(private router:Router, private http:PersonaService) { }
 

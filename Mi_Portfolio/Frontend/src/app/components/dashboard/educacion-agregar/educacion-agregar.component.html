@@ -18,17 +18,17 @@
                             <div class="form-group">
                                 <label  class="labelform" for="nombres">Nombre:</label>
                                 <input type="text" id="nombres" name="nombres" class="form-control"
-                                    placeholder="introduce tus nombres" [(ngModel)]="educacion.nombre">
+                                    placeholder="introduce nombre de carrera" [(ngModel)]="educacion.nombre">
                             </div>
                             <div class="form-group">
-                                <label class="labelform" for="apellidos">Años:</label>
-                                <input type="text" id="apellidos" name="apellidos" class="form-control"
-                                    placeholder="introduce tus apellidos" [(ngModel)]="educacion.anios">
+                                <label class="labelform" for="anios">Años:</label>
+                                <input type="text" id="anios" name="anios" class="form-control"
+                                    placeholder="introduce tus anios" [(ngModel)]="educacion.anios">
                             </div>
                             <div class="form-group">
-                                <label class="labelform" for="apellidos">Titulo:</label>
+                                <label class="labelform" for="titulo">Titulo:</label>
                                 <input type="text" id="titulo" name="titulo" class="form-control"
-                                    placeholder="ocupacion" [(ngModel)]="educacion.descripcion">
+                                    placeholder="institucion" [(ngModel)]="educacion.descripcion">
                             </div>
                             <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
                         </form>

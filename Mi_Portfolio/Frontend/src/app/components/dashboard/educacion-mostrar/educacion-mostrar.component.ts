@@ -9,26 +9,27 @@ import { EducacionService } from 'src/app/service/api/educacion.service';
   styleUrls: ['./educacion-mostrar.component.css']
 })
 export class EducacionMostrarComponent implements OnInit {
-  educaciones:Educacion[]=[];
-  educacion: Educacion = new Educacion;
-  constructor(private router:Router, private http:EducacionService) { }
-
-
   
+  educaciones:Educacion[] = [];
+  educacion:Educacion = new Educacion;
+
+  constructor(private router:Router, private http: EducacionService) { }
 
   ngOnInit(): void {
     this.http.getEducacion()
-    .subscribe(data =>{
-      this.educaciones;
-    })
+     .subscribe((data:any) => 
+      this.educaciones = data
+    )
   }
 
   eliminarEducacion(educacion:Educacion){
     this.http.deleteEducacion(educacion)
-    .subscribe(data=>{
+    .subscribe((data:any)=>{
       this.educaciones=this.educaciones.filter(p=>p !== educacion)
       this.router.navigate(["dashboard"])
     })
   }
+
+
 
 }
