@@ -21,7 +21,7 @@ public class HardSkillsServiceImp implements HardSkillsService{
     }
 
     @Override
-    public HardSkills mostHardSkillsId(Long id){
+    public HardSkills mostrarHardSkillsId(Long id){
         return hardRepo.findById(id);
     }
 
@@ -40,8 +40,8 @@ public class HardSkillsServiceImp implements HardSkillsService{
     }
 
     @Override
-    public HardSkills agregarHardSkills(HardSkills hardkills) {
-        return hardRepo.save(hardkills);
+    public HardSkills agregarHardSkills(HardSkills hardskills) {
+        return hardRepo.save(hardskills);
     }
  
 }

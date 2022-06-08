@@ -25,14 +25,14 @@ public class HardSkillsController {
     @Autowired
     private HardSkillsService service;
 
-    @GetMapping("/hardskills")
+    @GetMapping(value="/hardskills")
     public List<HardSkills>mostrarHardSkills(){
         return service.mostrarHardSkills();
     }
 
-    @GetMapping("/hardskills/{id}")
-    public HardSkills mostHardSkillsId(Long id){
-        return service.mostHardSkillsId(id);
+    @GetMapping(value="/hardskills/{id}")
+    public HardSkills mostrarHardSkillsId(@PathVariable Long id){
+        return service.mostrarHardSkillsId(id);
     }
 
     @PostMapping(value="/hardskills")

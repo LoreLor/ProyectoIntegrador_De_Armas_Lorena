@@ -10,7 +10,7 @@ import org.springframework.data.repository.Repository;
 public interface HardSkillsRepository extends Repository<HardSkills, Long>{
     List<HardSkills>findAll();
     HardSkills findById(Long id);
-    HardSkills save(HardSkills persona);
-    HardSkills delete(HardSkills persona);
+    HardSkills save(HardSkills hardskills);
+    HardSkills delete(HardSkills hardskills);
 
 }
