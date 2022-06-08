@@ -5,7 +5,7 @@
     text-align: center;
     align-items: center;
     margin-top: 5px;
-    background-color:rgb(31, 214, 199);
+    background-color:rgb(149, 238, 231);
     color: rgb(4, 3, 59);
 }
 
@@ -32,7 +32,7 @@ label{
     width: 70%;
 }
 .accordion-button{
-    background-color:#10dd09;
+    background-color:rgb(31, 214, 199);
     color: white;
     font-weight: 700;
     
