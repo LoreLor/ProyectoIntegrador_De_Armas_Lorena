@@ -22,6 +22,14 @@ export class EducacionMostrarComponent implements OnInit {
     )
   }
 
+  editarEducacion(id:number): void{
+    localStorage.setItem("id", id.toString());
+    this.router.navigate(["editarEducacion"])
+    localStorage.getItem("id")
+    console.log(id)
+    window.location.reload()
+  }
+
   eliminarEducacion(educacion:Educacion){
     this.http.deleteEducacion(educacion)
     .subscribe((data:any)=>{
