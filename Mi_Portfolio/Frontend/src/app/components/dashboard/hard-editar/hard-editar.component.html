@@ -1,1 +1,34 @@
-<p>hard-editar works!</p>
+<div class="container col-md-6">
+    <div class="card body">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        EDITAR
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label class="labelform" for="title">Nombre:</label>
+                                <input type="text" id="title" name="title" class="form-control"
+                                    [(ngModel)]="hard.title">
+                            </div>
+                            <div class="form-group">
+                                <label class="labelform" for="porcentaje">Porcentaje:</label>
+                                <input type="text" id="porcentaje" name="anios" class="form-control"
+                                    placeholder="introduce un porcentaje" [(ngModel)]="hard.percent">
+                            </div>
+                            <button (click)="actualizar()" class="btn btn-ligth">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

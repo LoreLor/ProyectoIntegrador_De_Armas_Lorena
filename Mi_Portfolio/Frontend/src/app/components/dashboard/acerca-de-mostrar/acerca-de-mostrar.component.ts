@@ -26,6 +26,7 @@ export class AcercaDeMostrarComponent implements OnInit {
     this.router.navigate(["editarPersona"])
     localStorage.getItem("id")
     console.log(id)
+    window.location.reload()
   }
 
   postearPersona(){
