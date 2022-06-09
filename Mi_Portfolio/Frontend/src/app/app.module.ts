@@ -23,7 +23,6 @@ import { EducacionAgregarComponent } from './components/dashboard/educacion-agre
 import { EducacionMostrarComponent } from './components/dashboard/educacion-mostrar/educacion-mostrar.component';
 import { ExperienciaEditarComponent } from './components/dashboard/experiencia-editar/experiencia-editar.component';
 import { ExperienciaAgregarComponent } from './components/dashboard/experiencia-agregar/experiencia-agregar.component';
-import { ExperienciaEliminarComponent } from './components/dashboard/experiencia-eliminar/experiencia-eliminar.component';
 import { ExperienciaMostrarComponent } from './components/dashboard/experiencia-mostrar/experiencia-mostrar.component';
 import { HardMostrarComponent } from './components/dashboard/hard-mostrar/hard-mostrar.component';
 import { HardAgregarComponent } from './components/dashboard/hard-agregar/hard-agregar.component';
@@ -31,10 +30,8 @@ import { HardEditarComponent } from './components/dashboard/hard-editar/hard-edi
 import { ProyectosEditarComponent } from './components/dashboard/proyectos-editar/proyectos-editar.component';
 import { ProyectosAgregarComponent } from './components/dashboard/proyectos-agregar/proyectos-agregar.component';
 import { ProyectosMostrarComponent } from './components/dashboard/proyectos-mostrar/proyectos-mostrar.component';
-import { ProyectosEliminarComponent } from './components/dashboard/proyectos-eliminar/proyectos-eliminar.component';
 import { SoftEditarComponent } from './components/dashboard/soft-editar/soft-editar.component';
 import { SoftAgregarComponent } from './components/dashboard/soft-agregar/soft-agregar.component';
-import { SoftEliminarComponent } from './components/dashboard/soft-eliminar/soft-eliminar.component';
 import { SoftMostrarComponent } from './components/dashboard/soft-mostrar/soft-mostrar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PersonaService } from './service/api/persona.service';
@@ -65,15 +62,12 @@ import { HttpClientModule } from '@angular/common/http';
     EducacionMostrarComponent,
     ExperienciaEditarComponent,
     ExperienciaAgregarComponent,
-    ExperienciaEliminarComponent,
     ExperienciaMostrarComponent,
     ProyectosEditarComponent,
     ProyectosAgregarComponent,
     ProyectosMostrarComponent,
-    ProyectosEliminarComponent,
     SoftEditarComponent,
     SoftAgregarComponent,
-    SoftEliminarComponent,
     SoftMostrarComponent,
     HomeComponent
   ],

@@ -25,12 +25,12 @@ public class SoftSkillsController {
     @Autowired
     private SoftSkillsService service;
 
-    @GetMapping(value="/softsKills")
-    public List<SoftSkills> mostrarSoftSkills() {
+    @GetMapping("/softskills")
+    public List<SoftSkills>mostrarSoftSkills() {
         return service.mostrarSoftSkills();
     }
 
-    @GetMapping(value="/softsKills/{id}")
+    @GetMapping(value="/softskills/{id}")
     public SoftSkills mostrarSoftSkillsId(@PathVariable Long id) {
         return service.mostrarSoftSkillsId(id);
     }
@@ -41,8 +41,8 @@ public class SoftSkillsController {
     }
 
     @PutMapping(value = "/softskills")
-    public SoftSkills editarSoftSkills(@PathVariable Long id, @RequestBody SoftSkills softSkills){
-        return service.editarSoftSkills(softSkills);
+    public SoftSkills editarSoftSkills(@PathVariable Long id, @RequestBody SoftSkills softskills){
+        return service.editarSoftSkills(softskills);
     }
 
     @DeleteMapping(value = "/softskills/{id}")

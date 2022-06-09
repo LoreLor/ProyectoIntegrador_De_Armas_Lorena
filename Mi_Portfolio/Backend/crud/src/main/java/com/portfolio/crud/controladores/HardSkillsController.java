@@ -40,7 +40,7 @@ public class HardSkillsController {
         return service.agregarHardSkills(hardskills);
     }
 
-    @PutMapping(value="hardskills/{id}")
+    @PutMapping(value="/hardskills/{id}")
     public HardSkills editarHardSkills(@PathVariable Long id, @RequestBody HardSkills hardskills) {
         // hardskills.setId(hardskills.getId());
         // hardskills.setTitle(hardskills.getTitle());
