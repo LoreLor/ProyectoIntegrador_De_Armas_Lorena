@@ -31,7 +31,7 @@ public class ProyectosController {
     }
 
     @GetMapping(value = "/proyectos/{id}")
-    public Proyectos mostrarProyectosId(Long id){
+    public Proyectos mostrarProyectosId(@PathVariable Long id){
         return service.mostrarProyectosId(id);
     }
 
