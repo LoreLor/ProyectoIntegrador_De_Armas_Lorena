@@ -20,13 +20,13 @@ public class SoftSkills {
     private String title;
 
     @Column(name = "descripcion", length = 255, nullable = false)
-    private Integer descripcion;
+    private String descripcion;
 
 
     public SoftSkills() {}
 
 
-    public SoftSkills(Long id, String title, Integer descripcion) {
+    public SoftSkills(Long id, String title, String descripcion) {
         this.id = id;
         this.title = title;
         this.descripcion = descripcion;
@@ -49,11 +49,11 @@ public class SoftSkills {
         this.title = title;
     }
 
-    public Integer getDescripcion() {
+    public String getDescripcion() {
         return this.descripcion;
     }
 
-    public void setDescripcion(Integer descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 }

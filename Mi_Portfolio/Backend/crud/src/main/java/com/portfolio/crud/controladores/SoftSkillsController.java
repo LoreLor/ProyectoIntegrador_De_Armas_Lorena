@@ -41,8 +41,8 @@ public class SoftSkillsController {
     }
 
     @PutMapping(value = "/softskills")
-    public SoftSkills editarSoftSkills(@PathVariable Long id, @RequestBody SoftSkills softSkills){
-        return service.editarSoftSkills(softSkills);
+    public SoftSkills editarSoftSkills(@PathVariable Long id, @RequestBody SoftSkills softskills){
+        return service.editarSoftSkills(softskills);
     }
 
     @DeleteMapping(value = "/softskills/{id}")

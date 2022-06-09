@@ -35,10 +35,10 @@ public class SoftSkillsServiceImp implements SoftSkillsService {
 
     @Override
     public SoftSkills eliminarSoftSkills(Long id) {
-        SoftSkills softSkills = softRepo.findById(id);
-        if(softSkills != null){
-            return softRepo.delete(softSkills);
+        SoftSkills softskills = softRepo.findById(id);
+        if(softskills != null){
+            return softRepo.delete(softskills);
         }
-        return softSkills;
+        return softskills;
     }    
 }
