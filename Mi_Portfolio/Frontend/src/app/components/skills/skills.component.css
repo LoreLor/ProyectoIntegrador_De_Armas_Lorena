@@ -21,6 +21,10 @@ img{
     margin:5px;  
 }
 
+.soft{
+  color:darkgreen;
+}
+
 h1 {
     margin-top:2%;
     animation-duration: 6s;
@@ -52,5 +56,13 @@ h1 {
       grid-template-columns: 1fr 1fr ;
     }
   }
+
+  p{
+    display: flex;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color:darkgreen;
+}
     
   

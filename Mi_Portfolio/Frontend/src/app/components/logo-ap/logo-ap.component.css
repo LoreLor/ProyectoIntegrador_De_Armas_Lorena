@@ -11,7 +11,7 @@
 }
 .redes img:hover{
     transform: scale(1.5);
-    background-color: darkorange;
+    background: linear-gradient(90deg, #f4f805, #f37005);    
     border-radius: 100%;
 }
 
@@ -28,11 +28,12 @@
 }
 .btn:hover{
     transform: scale(1.3);
-    background-color: darkorange;
+    background: linear-gradient(90deg, #f4f805, #f37005);    
     color: white;
-    border-width:2px;
-   
+    border-width:2px;  
 }
+
+
 
 /*para vista celular*/
 @media(max-width:575px){
