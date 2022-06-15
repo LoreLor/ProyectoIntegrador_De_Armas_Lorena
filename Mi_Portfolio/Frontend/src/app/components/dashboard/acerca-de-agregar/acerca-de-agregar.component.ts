@@ -23,5 +23,13 @@ export class AcercaDeAgregarComponent implements OnInit {
         this.router.navigate(["dashboard"])
       })
   }
+  changeImag(event:Event):any{
+    if(event){
+      const imagen= this.persona.imagenPerfil.split('C:\\fakepath\\')
+    console.log(imagen)
+    this.persona.imagenPerfil=imagen[1]
+      }
+  
+    }
 
 }

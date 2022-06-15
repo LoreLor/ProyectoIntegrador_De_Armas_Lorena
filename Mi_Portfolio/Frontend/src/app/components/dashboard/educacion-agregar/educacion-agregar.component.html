@@ -13,8 +13,8 @@
                     <div class="accordion-body">
                         <form action="">
                             <div class="form-group">
-                                <label  class="labelform" for="nombres">Nombre:</label>
-                                <input type="text" id="nombres" name="nombres" class="form-control"
+                                <label  class="labelform" for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control"
                                     placeholder="introduce nombre de carrera" [(ngModel)]="educacion.nombre">
                             </div>
                             <div class="form-group">
@@ -23,8 +23,8 @@
                                     placeholder="introduce tus anios" [(ngModel)]="educacion.anios">
                             </div>
                             <div class="form-group">
-                                <label class="labelform" for="titulo">Institucion:</label>
-                                <input type="text" id="titulo" name="titulo" class="form-control"
+                                <label class="labelform" for="descrpcion">Institucion:</label>
+                                <input type="text" id="descripcion" name="descripcion" class="form-control"
                                     placeholder="institucion" [(ngModel)]="educacion.descripcion">
                             </div>
                             <button (click)="guardar()" class="btn btn-ligth">Guardar</button>

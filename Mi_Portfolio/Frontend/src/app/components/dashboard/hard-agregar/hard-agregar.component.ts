@@ -9,21 +9,26 @@ import { HardService } from 'src/app/service/api/hard.service';
   styleUrls: ['./hard-agregar.component.css']
 })
 export class HardAgregarComponent implements OnInit {
-  hard:Hard = new Hard;
+  hardskill:Hard = new Hard;
 
   constructor(private router:Router, private http:HardService) { }
 
   ngOnInit(): void {
-    console.log(this.hard)
+    console.log(this.hardskill)
   }
 
   guardar(){
-    this.http.addHard(this.hard)
-      .subscribe(data => {
+    
+    if(this.hardskill.title){
+    this.http.addHard(this.hardskill)
+      .subscribe((data:any) => {
         console.log(data)
         alert("Hard Skill agregado con exito");
-        this.router.navigate(["dashboard"])
         window.location.reload()
       })
+    }else{
+      alert('El nombre de Hard skill que intentas registrar ya existe en BD ')
     }
+    }
+      
 }

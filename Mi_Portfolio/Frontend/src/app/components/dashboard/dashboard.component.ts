@@ -15,9 +15,10 @@ export class DashboardComponent implements OnInit {
   constructor(private router:Router, private http: PersonaService) { }
 
   ngOnInit(): void {
-    this.http.getPersona()
-    .subscribe(data=>{
-      this.personas=data; 
-  })
+  
+  }
+
+  logout():void{
+    this.router.navigate([''])
   }
 }

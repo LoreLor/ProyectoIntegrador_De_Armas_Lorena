@@ -1,0 +1,33 @@
+.card{
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    background-color: rgb(199, 143, 224);
+    color: rgb(4, 3, 59);
+}
+.atributos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{  
+    border-color: #10dd09;   
+}
+.btn:hover{
+    background: linear-gradient(90deg, #10dd09, #d0d308);
+    border: linear-gradient(90deg, #10dd09, #d0d308);      
+    color:aliceblue;
+}
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+   
+}
+.labelform {
+    display: flex;
+    align-items: flex-start;
+}
+.table{
+    font-size:0.8rem;
+}

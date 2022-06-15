@@ -1,19 +1,26 @@
 .titulo{
-    background-color: rgb(215, 247, 203);
-    
+    background-color: rgb(215, 247, 203);  
   }
 
 .container{
     margin-top: 50px;
     text-align: center;
 }
+ .botonContenedor{
+    display: flex;
+    justify-content:end;
+    margin-right: 9.5%;
+} 
 
 .btn{
-    border-color: #5a22c3;
+    border-color: #1ba708;
+    color:#05215e ;
+    font-weight: 600;
 }
 .btn:hover{
-    background: linear-gradient(90deg, #5a22c3, #d0fd2d);
-    border: linear-gradient(90deg, #5a22c3, #d0fd2d);   
-   
-    color:aliceblue;
+    background: linear-gradient(90deg, #46df09, #c8f036);
+    border: linear-gradient(90deg, #50c322, #c3f021);   
+    color:rgb(29, 16, 104);
+    font-weight: 600;
+    transform: scale(1.3);
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Soft } from 'src/app/models/Soft';
 
 @Injectable({
@@ -8,22 +9,22 @@ import { Soft } from 'src/app/models/Soft';
 export class SoftService {
   Url="http://localhost:8080/api/softskills";
 
-  constructor(private http1:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   /*METODOS*/
-  getSoft(){
-    return this.http1.get<Soft>(this.Url)
+  public getSoft() : Observable<Soft[]>{
+    return this.http.get<Soft[]>(this.Url)
   }
-  getSoftById(id:number){
-    return this.http1.get<Soft>(`${this.Url}/${id}`)
+  public getSoftById(id:number) : Observable<Soft>{
+    return this.http.get<Soft>(`${this.Url}/${id}`)
   }
-  addSoft(soft:Soft){
-    return this.http1.post<Soft>(this.Url, soft)
+  public addSoft(soft:Soft): Observable<Soft>{
+    return this.http.post<Soft>(this.Url, soft)
   }
-  updateSoft(soft:Soft){
-    return this.http1.put<Soft>(`${this.Url}/${soft.id}`, soft)
+  public updateSoft(soft:Soft): Observable<Soft>{
+    return this.http.put<Soft>(`${this.Url}/${soft.id}`, soft)
   }
-  deleteSoft(soft:Soft){
-    return this.http1.delete<Soft>(`${this.Url}/${soft.id}`)
+  public deleteSoft(soft:Soft): Observable<Soft>{
+    return this.http.delete<Soft>(`${this.Url}/${soft.id}`)
   }
 }

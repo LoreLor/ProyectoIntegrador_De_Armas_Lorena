@@ -26,14 +26,29 @@ export class AcercaDeEditarComponent implements OnInit {
     })  
   }
 
-  actualizar(){
-    this.http.updatePersona(this.persona)
-    .subscribe(data =>{
-      console.log(data)
+  actualizar() : void{
+    if(this.persona.id){
+      this.http.updatePersona(this.persona)
+      .subscribe(data =>{
+        console.log(data)
         alert("Datos modificados con exito");
-        this.router.navigate(["dashboard"])
-        window.location.reload()
-    })  
+        //window.location.reload()
+      })
+
+    }else{
+      alert('La persona que intentas modificar no existe en base de datos')
+    }
+  } 
+
+
+changeImag(event:Event):any{
+  if(event){
+    const imagen= this.persona.imagenPerfil.split('C:\\fakepath\\')
+  console.log(imagen)
+  this.persona.imagenPerfil=imagen[1]
+    }
+
   }
+
 
 }

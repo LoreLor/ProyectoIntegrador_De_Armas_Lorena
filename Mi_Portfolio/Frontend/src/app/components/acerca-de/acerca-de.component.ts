@@ -10,19 +10,15 @@ import { PersonaService } from 'src/app/service/api/persona.service';
 })
 export class AcercaDeComponent implements OnInit {
   personas: Persona[] =[];
-  persona: Persona = new Persona; 
-  constructor(private router:Router, private http:PersonaService ) { }
+  persona: Persona = new Persona(); //para inicializarlo
+  
+  constructor(private http: PersonaService ) { }
 
   ngOnInit(): void {
     this.http.getPersona()
-    .subscribe(data=>{
+    .subscribe(data => {    //subscribe detecta los cambios
       this.personas=data; 
   })
-
   }
-
-
-
-
 }
 
