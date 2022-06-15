@@ -10,7 +10,7 @@ import { Hard } from 'src/app/models/Hard';
 })
 export class HardMostrarComponent implements OnInit {
   hardskills: Hard[] = [];
-  hardskill: Hard = new Hard;
+  hardskill: Hard = new Hard();
 
   constructor(private router: Router, private http: HardService) { }
 

@@ -10,7 +10,7 @@ import { PersonaService } from 'src/app/service/api/persona.service';
 })
 export class AcercaDeMostrarComponent implements OnInit {
   personas: Persona[] = [];
-  persona: Persona = new Persona; 
+  persona: Persona = new Persona(); 
   constructor(private router:Router, private http:PersonaService) { }
 
   ngOnInit(): void {

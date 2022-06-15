@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EducacionComponent implements OnInit {
   educaciones: Educacion[] = [];
-  educacion: Educacion = new Educacion;
+  educacion: Educacion = new Educacion();
   constructor(private router: Router, private http: EducacionService) { }
 
 

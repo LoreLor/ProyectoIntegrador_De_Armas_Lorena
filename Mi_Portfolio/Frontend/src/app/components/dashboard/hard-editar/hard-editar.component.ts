@@ -9,7 +9,7 @@ import { HardService } from 'src/app/service/api/hard.service';
   styleUrls: ['./hard-editar.component.css']
 })
 export class HardEditarComponent implements OnInit {
-  hardskill:Hard= new Hard;
+  hardskill:Hard= new Hard();
 
   constructor(private router:Router, private http:HardService) { }
 

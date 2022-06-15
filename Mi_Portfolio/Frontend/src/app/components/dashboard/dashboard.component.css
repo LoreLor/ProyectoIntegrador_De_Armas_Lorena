@@ -6,9 +6,10 @@
     margin-top: 50px;
     text-align: center;
 }
- .botonContenedor{
+ 
+.botonContenedor{
     display: flex;
-    justify-content:end;
+    justify-content:flex-end;
     margin-right: 9.5%;
 } 
 

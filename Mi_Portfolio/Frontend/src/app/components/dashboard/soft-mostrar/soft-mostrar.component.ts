@@ -10,7 +10,7 @@ import { SoftService } from 'src/app/service/api/soft.service';
 })
 export class SoftMostrarComponent implements OnInit {
   softs:Soft[] = [];
-  soft:Soft = new Soft
+  soft:Soft = new Soft();
 
   constructor(private router:Router, private http: SoftService) { }
 

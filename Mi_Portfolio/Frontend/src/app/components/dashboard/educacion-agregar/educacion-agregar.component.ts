@@ -9,7 +9,7 @@ import { EducacionService } from 'src/app/service/api/educacion.service';
   styleUrls: ['./educacion-agregar.component.css']
 })
 export class EducacionAgregarComponent implements OnInit {
-  educacion:Educacion = new Educacion
+  educacion:Educacion = new Educacion()
 
   constructor(private router:Router, private http:EducacionService) { }
 
@@ -22,7 +22,6 @@ export class EducacionAgregarComponent implements OnInit {
       .subscribe(data => {
         console.log(data)
         alert("Educacion agregada con exito");
-        this.router.navigate(["dashboard"])
         window.location.reload()
       })
   }

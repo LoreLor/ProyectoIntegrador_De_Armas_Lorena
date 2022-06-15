@@ -13,7 +13,7 @@ import { SoftService } from 'src/app/service/api/soft.service';
 })
 export class SkillsComponent implements OnInit {
   hardskills:Hard[] = [];
-  hardskill:Hard = new Hard;
+  hardskill:Hard = new Hard();
   softs:Soft[]=[];
   soft:Soft = new Soft;
 

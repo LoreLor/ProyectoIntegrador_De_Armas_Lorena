@@ -11,9 +11,9 @@ import { EducacionService } from 'src/app/service/api/educacion.service';
 export class EducacionMostrarComponent implements OnInit {
   
   educaciones:Educacion[] = [];
-  educacion:Educacion = new Educacion;
+  educacion:Educacion = new Educacion();
 
-  constructor(private router:Router, private http: EducacionService) { }
+  constructor(private http: EducacionService) { }
 
   ngOnInit(): void {
     this.http.getEducacion()
@@ -24,9 +24,8 @@ export class EducacionMostrarComponent implements OnInit {
 
   editarEducacion(id:number): void{
     localStorage.setItem("id", id.toString());
-    this.router.navigate(["editarEducacion"])
-    localStorage.getItem("id")
     console.log(id)
+    localStorage.getItem("id")
     window.location.reload()
   }
 
@@ -34,7 +33,6 @@ export class EducacionMostrarComponent implements OnInit {
     this.http.deleteEducacion(educacion)
     .subscribe((data:any)=>{
       this.educaciones=this.educaciones.filter(p=>p !== educacion)
-      this.router.navigate(["dashboard"])
     })
   }
 
