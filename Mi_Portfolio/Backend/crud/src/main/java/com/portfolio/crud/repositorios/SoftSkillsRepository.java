@@ -12,6 +12,6 @@ import org.springframework.data.repository.Repository;
 public interface SoftSkillsRepository extends Repository<SoftSkills, Long> {
     List<SoftSkills>findAll();
     SoftSkills findById(Long id);
-    SoftSkills save(SoftSkills softskills);
-    SoftSkills delete(SoftSkills softskills);
+    SoftSkills save(SoftSkills persona);
+    SoftSkills delete(SoftSkills persona);
 }
