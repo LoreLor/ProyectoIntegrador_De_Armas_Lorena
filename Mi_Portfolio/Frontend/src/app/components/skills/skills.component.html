@@ -226,12 +226,12 @@
                     [animationDuration]="600"
                     ></circle-progress>                            -->
                 </div>
-                
-                <div>
-                    <h1>Soft Skills</h1>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-11" *ngFor="let soft of softs">
-                <ul>
+                </div>
+            <div class="row">
+                <h1>Soft Skills</h1>
+                <div class="col-lg-1"></div>
+            <div class="col-lg-11">
+                <ul *ngFor="let soft of softs">
                     <li>
                         <p>{{soft.title}}</p>  
                     </li>
@@ -239,4 +239,4 @@
             </div>
         </div>
     </div>
-</div>
+
