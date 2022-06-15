@@ -40,9 +40,9 @@ public class PersonaController {
 
     @PutMapping("/persona/{id}")
     public Persona editar(@RequestBody Persona persona, @PathVariable Long id){
-        // persona.setId(persona.getId());
-        // persona.setNombres(persona.getNombres());
-        // persona.setApellidos(persona.getApellidos());
+         //persona.setId(persona.getId());
+         //persona.setNombres(persona.getNombres());
+         //persona.setApellidos(persona.getApellidos());
         return service.editarPersona(persona);
     }
 
