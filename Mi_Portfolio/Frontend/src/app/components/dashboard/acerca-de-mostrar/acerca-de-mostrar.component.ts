@@ -21,16 +21,11 @@ export class AcercaDeMostrarComponent implements OnInit {
 }
 
 
-  editarPersona(id:number): void{
+  editarPersona(id:number): any{
     localStorage.setItem("id", id.toString());
-    this.router.navigate(["editarPersona"])
-    localStorage.getItem("id")
     console.log(id)
+    localStorage.getItem("id")
     window.location.reload()
-  }
-
-  postearPersona(){
-    this.router.navigate(["agregarPersona"])
   }
 
   eliminarPersona(persona:Persona){

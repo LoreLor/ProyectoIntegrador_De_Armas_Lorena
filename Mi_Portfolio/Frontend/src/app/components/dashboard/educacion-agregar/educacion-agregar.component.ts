@@ -26,8 +26,4 @@ export class EducacionAgregarComponent implements OnInit {
         window.location.reload()
       })
   }
-
-
-
-
 }

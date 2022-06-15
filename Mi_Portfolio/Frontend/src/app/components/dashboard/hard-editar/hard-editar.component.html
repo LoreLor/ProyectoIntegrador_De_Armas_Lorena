@@ -16,12 +16,12 @@
                             <div class="form-group">
                                 <label class="labelform" for="title">Nombre:</label>
                                 <input type="text" id="title" name="title" class="form-control"
-                                    [(ngModel)]="hard.title">
+                                    [(ngModel)]="hardskill.title">
                             </div>
                             <div class="form-group">
-                                <label class="labelform" for="porcentaje">Porcentaje:</label>
-                                <input type="text" id="porcentaje" name="anios" class="form-control"
-                                    placeholder="introduce un porcentaje" [(ngModel)]="hard.percent">
+                                <label class="labelform" for="porcent">Porcentaje:</label>
+                                <input type="number" min="1" max="100" id="porcent" name="percent" class="form-control"
+                                    placeholder="introduce un porcentaje" [(ngModel)]="hardskill.percent">
                             </div>
                             <button (click)="actualizar()" class="btn btn-ligth">Actualizar</button>
                         </form>

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Hard } from 'src/app/models/Hard';
@@ -11,19 +12,19 @@ export class HardService {
   constructor(private http:HttpClient) { }
 
   /*METODOS*/
-  getHard(){
-    return this.http.get<Hard>(this.Url)
+  public getHard() : Observable<Hard[]>{
+    return this.http.get<Hard[]>(this.Url)
   }
-  getHardById(id:number){
+  public getHardById(id:number) : Observable<Hard>{
     return this.http.get<Hard>(`${this.Url}/${id}`)
   }
-  addHard(hard:Hard){
-    return this.http.post<Hard>(this.Url, hard)
+  public addHard(hardskills:Hard) : Observable<Hard>{
+    return this.http.post<Hard>(this.Url, hardskills)
   }
-  updateHard(hard:Hard){
-    return this.http.put<Hard>(`${this.Url}/${hard.id}`, hard)
+  public updateHard(hardskills:Hard) : Observable<Hard>{
+    return this.http.put<Hard>(`${this.Url}/${hardskills.id}`, hardskills)
   }
-  deleteHard(hard:Hard){
-    return this.http.delete<Hard>(`${this.Url}/${hard.id}`)
+  public deleteHard(hardskills:Hard) : Observable<Hard>{
+    return this.http.delete<Hard>(`${this.Url}/${hardskills.id}`)
   }
 }

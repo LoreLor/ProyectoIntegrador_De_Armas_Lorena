@@ -1,7 +1,9 @@
 <div style="text-align: center;">
     <h1 class="titulo">Welcome to My Dashboard!!!</h1>
-    
   </div>
+  <div class="botonContenedor">
+    <button (click)="logout()"   type="button" class="btn btn-outline-light">LOGOUT</button>
+</div>
   <div class="container"> 
     <app-acerca-de-mostrar></app-acerca-de-mostrar>
     <app-acerca-de-agregar></app-acerca-de-agregar>
@@ -12,5 +14,8 @@
     <app-hard-mostrar></app-hard-mostrar>
     <app-hard-agregar></app-hard-agregar>
     <app-hard-editar></app-hard-editar>
+    <app-soft-mostrar></app-soft-mostrar>
+    <app-soft-agregar></app-soft-agregar>
+    <app-soft-editar></app-soft-editar>
   </div>
-  <router-outlet></router-outlet>
+  

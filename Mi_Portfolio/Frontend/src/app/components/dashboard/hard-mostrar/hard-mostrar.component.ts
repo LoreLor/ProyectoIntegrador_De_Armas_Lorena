@@ -9,31 +9,29 @@ import { Hard } from 'src/app/models/Hard';
   styleUrls: ['./hard-mostrar.component.css']
 })
 export class HardMostrarComponent implements OnInit {
-  hards: Hard[] = [];
-  hard: Hard = new Hard;
+  hardskills: Hard[] = [];
+  hardskill: Hard = new Hard;
 
   constructor(private router: Router, private http: HardService) { }
 
   ngOnInit(): void {
     this.http.getHard()
       .subscribe((data: any) =>
-        this.hards = data
+        this.hardskills = data
       )
   }
 
   editarHard(id: number): void {
     localStorage.setItem("id", id.toString());
-    this.router.navigate(["editarHard"])
-    localStorage.getItem("id")
     console.log(id)
+    localStorage.getItem("id")
     window.location.reload()
   }
 
-  eliminarHard(hard: Hard) {
-    this.http.deleteHard(hard)
+  eliminarHard(hardskill: Hard) {
+    this.http.deleteHard(hardskill)
       .subscribe((data: any) => {
-        this.hards = this.hards.filter(p => p !== hard)
-        this.router.navigate(["dashboard"])
+        this.hardskills = this.hardskills.filter(p => p !== hardskill)
       })
   }
 }

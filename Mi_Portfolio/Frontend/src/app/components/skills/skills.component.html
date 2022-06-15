@@ -1,85 +1,55 @@
 <div class=".container">
     <div class="row">
         <h1>Hard Skills</h1>
-        <div class="col-lg-1"></div>
-        <div class="text-center col-lg-11">
-            <circle-progress
-            [percent]="50"
-            [radius]="70"
-            [imageSrc]="'../../../assets/react-trnsparente.png'"
-            [showImage]="true"
-            [imageHeight]="100"
-            [imageWidth]="180"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="3"
-            [innerStrokeColor]="'black'"
-            [outerStrokeColor]="'rgb(71, 235, 6)'"
-            [animation]="true"
-            [animationDuration]="600"
+        <div class="circle">
+        <div class="col-lg-11" *ngFor="let hardskill of hardskills" >
+            <circle-progress                   
+                    [percent]="hardskill.percent"
+                    [radius]="60"
+                    [title]="hardskill.title"
+                    [titleColor]="'#10dd09'"
+                    [titleFontSize]="'19'"
+                    [titleFontWeight]="'600'"
+                    [units]="''"
+                    [responsive]="true"
+                    [showTitle]="true"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'#10dd09'"
+                    [outerStrokeGradientStopColor]="'#c8f036'"
+                    [outerStrokeGradient]="true"
+                    [backgroundColor]="''"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    [lazy]="true"
+            ></circle-progress>
+        </div>
+        
+            <!-- <circle-progress 
+                    [accessKey]="hardskill.title"
+                    [percent]="hardskill.percent"
+                    [radius]="50"
+                    [title]="hardskill.title"
+                    [imageSrc]="'../../../assets/redux.png'"
+                    [showImage]="true"
+                    [imageHeight]="40"
+                    [imageWidth]="40"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'rgb(71, 235, 6)'"
+                    [animation]="true"
+                    [animationDuration]="600"
             ></circle-progress>
             <circle-progress
-            [percent]="85"
-            [radius]="70"
-            [imageSrc]="'../../../assets/redux.png'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="3"
-            [innerStrokeColor]="'black'"
-            [outerStrokeColor]="'rgb(71, 235, 6)'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-            <circle-progress
-            [percent]="85"
-            [radius]="70"
-            [imageSrc]="'../../../assets/node-transparente.png'"
-                    [showImage]="true"
-                    [imageHeight]="90"
-                    [imageWidth]="150"
-                    [outerStrokeWidth]="10"
-                    [innerStrokeWidth]="3"
-                    [innerStrokeColor]="'black'"
-                    [outerStrokeColor]="'rgb(71, 235, 6)'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                    ></circle-progress>
-                    <circle-progress
-                    [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/postgres-transparente.png'"
-                    [showImage]="true"
-                    [imageHeight]="90"
-                    [imageWidth]="100"
-                    [outerStrokeWidth]="10"
-                    [innerStrokeWidth]="3"
-                    [innerStrokeColor]="'black'"
-                    [outerStrokeColor]="'rgb(71, 235, 6)'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                    ></circle-progress>
-                    <circle-progress
-                    [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/mongoDB-transparente.png'"
-                    [showImage]="true"
-                    [imageHeight]="90"
-                    [imageWidth]="140"
-                    [outerStrokeWidth]="10"
-                    [innerStrokeWidth]="3"
-                    [innerStrokeColor]="'black'"
-                    [outerStrokeColor]="'rgb(71, 235, 6)'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                    ></circle-progress>
-                    <circle-progress
-                    [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/angular-transparente.png'"
+                    [accessKey]="hardskill.title"
+                    [percent]="hardskill.percent"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/node-transparente.png'"
                     [showImage]="true"
                     [imageHeight]="60"
-                    [imageWidth]="60"
+                    [imageWidth]="110"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -89,10 +59,10 @@
                     ></circle-progress>
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/mysql-transparente.png'"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/postgres-transparente.png'"
                     [showImage]="true"
-                    [imageHeight]="70"
+                    [imageHeight]="60"
                     [imageWidth]="70"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
@@ -103,25 +73,11 @@
                     ></circle-progress>
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/spring_boot-transparente.png'"
-                    [showImage]="true"
-                    [imageHeight]="50"
-                    [imageWidth]="80"
-                    [outerStrokeWidth]="10"
-                    [innerStrokeWidth]="3"
-                    [innerStrokeColor]="'black'"
-                    [outerStrokeColor]="'rgb(71, 235, 6)'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                    ></circle-progress>
-                    <circle-progress
-                    [percent]="85"
-                    [radius]="70"
-                    [imageSrc]="'../../../assets/postman-transparente.png'"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/mongoDB-transparente.png'"
                     [showImage]="true"
                     [imageHeight]="70"
-                    [imageWidth]="140"
+                    [imageWidth]="100"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -131,11 +87,67 @@
                     ></circle-progress>
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/angular-transparente.png'"
+                    [showImage]="true"
+                    [imageHeight]="50"
+                    [imageWidth]="50"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'rgb(71, 235, 6)'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    ></circle-progress>
+                    <circle-progress
+                    [percent]="85"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/mysql-transparente.png'"
+                    [showImage]="true"
+                    [imageHeight]="65"
+                    [imageWidth]="65"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'rgb(71, 235, 6)'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    ></circle-progress>
+                    <circle-progress
+                    [percent]="85"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/spring_boot-transparente.png'"
+                    [showImage]="true"
+                    [imageHeight]="45"
+                    [imageWidth]="70"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'rgb(71, 235, 6)'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    ></circle-progress>
+                    <circle-progress
+                    [percent]="85"
+                    [radius]="50"
+                    [imageSrc]="'../../../assets/postman-transparente.png'"
+                    [showImage]="true"
+                    [imageHeight]="60"
+                    [imageWidth]="125"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="3"
+                    [innerStrokeColor]="'black'"
+                    [outerStrokeColor]="'rgb(71, 235, 6)'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    ></circle-progress>
+                    <circle-progress
+                    [percent]="85"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/html-js-css-transparente.png'"
                     [showImage]="true"
-                    [imageHeight]="50"
-                    [imageWidth]="90"
+                    [imageHeight]="45"
+                    [imageWidth]="70"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -145,11 +157,11 @@
                     ></circle-progress>
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/scrum-transparente.png'"
                     [showImage]="true"
-                    [imageHeight]="100"
-                    [imageWidth]="130"
+                    [imageHeight]="95"
+                    [imageWidth]="125"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -159,11 +171,11 @@
                     ></circle-progress>
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/trello.jpg'"
                     [showImage]="true"
-                    [imageHeight]="50"
-                    [imageWidth]="80"
+                    [imageHeight]="35"
+                    [imageWidth]="60"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -173,11 +185,11 @@
                     ></circle-progress>   
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/boostrap-transparente.png'"
                     [showImage]="true"
-                    [imageHeight]="85"
-                    [imageWidth]="130"
+                    [imageHeight]="70"
+                    [imageWidth]="115"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -187,11 +199,11 @@
                     ></circle-progress>     
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/GitHub-Logo.png'"
                     [showImage]="true"
-                    [imageHeight]="60"
-                    [imageWidth]="90"
+                    [imageHeight]="50"
+                    [imageWidth]="80"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
@@ -201,39 +213,27 @@
                     ></circle-progress> 
                     <circle-progress
                     [percent]="85"
-                    [radius]="70"
+                    [radius]="50"
                     [imageSrc]="'../../../assets/ingles-transparente.png'"
                     [showImage]="true"
-                    [imageHeight]="70"
-                    [imageWidth]="110"
+                    [imageHeight]="55"
+                    [imageWidth]="95"
                     [outerStrokeWidth]="10"
                     [innerStrokeWidth]="3"
                     [innerStrokeColor]="'black'"
                     [outerStrokeColor]="'rgb(71, 235, 6)'"
                     [animation]="true"
                     [animationDuration]="600"
-                    ></circle-progress>                           
+                    ></circle-progress>                            -->
                 </div>
                 
                 <div>
                     <h1>Soft Skills</h1>
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-11">
-                        <ul>
-                            <li>
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolorum iure cupiditate repellat doloribus, quo facere molestiae amet? Cumque odio iure at minima dolore consectetur tenetur! Expedita sequi saepe quod!
-                        </p>  
-                    </li>
+                    <div class="col-lg-11" *ngFor="let soft of softs">
+                <ul>
                     <li>
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolorum iure cupiditate repellat doloribus, quo facere molestiae amet? Cumque odio iure at minima dolore consectetur tenetur! Expedita sequi saepe quod!
-                        </p>  
-                    </li>
-                    <li>
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolorum iure cupiditate repellat doloribus, quo facere molestiae amet? Cumque odio iure at minima dolore consectetur tenetur! Expedita sequi saepe quod!
-                        </p>  
+                        <p>{{soft.title}}</p>  
                     </li>
                 </ul>
             </div>

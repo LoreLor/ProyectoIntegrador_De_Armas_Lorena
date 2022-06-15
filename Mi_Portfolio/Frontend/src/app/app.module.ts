@@ -38,6 +38,7 @@ import { PersonaService } from './service/api/persona.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { HttpClientModule } from '@angular/common/http';
     SoftEditarComponent,
     SoftAgregarComponent,
     SoftMostrarComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

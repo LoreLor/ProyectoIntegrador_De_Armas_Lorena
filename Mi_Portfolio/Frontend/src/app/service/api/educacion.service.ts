@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Educacion } from './../../models/Educacion';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,19 +12,19 @@ export class EducacionService {
   constructor(private http: HttpClient) { }
 
   /*METODOS*/
-  getEducacion(){
-    return this.http.get<Educacion>(this.Url)
+  public getEducacion() : Observable<Educacion[]>{
+    return this.http.get<Educacion[]>(this.Url)
   }
-  getEducacionById(id:number){
+  public getEducacionById(id:number) : Observable<Educacion>{
     return this.http.get<Educacion>(`${this.Url}/${id}`)
   }
-  addEducacion(educacion:Educacion){
+  public addEducacion(educacion:Educacion): Observable<Educacion>{
     return this.http.post<Educacion>(this.Url, educacion)
   }
-  updateEducacion(educacion:Educacion){
+  public updateEducacion(educacion:Educacion): Observable<Educacion>{
     return this.http.put<Educacion>(`${this.Url}/${educacion.id}`, educacion)
   }
-  deleteEducacion(educacion:Educacion){
+  public deleteEducacion(educacion:Educacion): Observable<Educacion>{
     return this.http.delete<Educacion>(`${this.Url}/${educacion.id}`)
   }
 }
