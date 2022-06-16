@@ -1,29 +1,45 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     text-align: center;
     align-items: center;
     margin-top: 5px;
     background-color:rgb(238, 187, 182);
     color: rgb(4, 3, 59);
 }
-.atributos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .btn{
-    margin-top: 15px;
+   margin-top: 15px;
     border-color: #10dd09;
-    margin-bottom: 15px;
-    margin:5px;
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);      
+    border: linear-gradient(90deg, #10dd09, #d0d308);    
     color:aliceblue;
 }
 .container{
     display: flex;
     width: 100%;
     flex-direction: column;
-   
 }
+label{
+    margin: 5px;
+}
+
+.accordion{
+    display: block;
+    width: 70%;
+}
+.accordion-button{
+    background-color:salmon;
+    color: white;
+    font-weight: 700;
+    
+}
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    font-weight: 600;
+}
+
