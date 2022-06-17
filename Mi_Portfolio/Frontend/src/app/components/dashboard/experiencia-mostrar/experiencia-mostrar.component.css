@@ -10,13 +10,14 @@
 }
 
 .btn{
-   margin-top: 15px;
+    margin-top: 10px;
     border-color: #10dd09;
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
     border: linear-gradient(90deg, #10dd09, #d0d308);    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
@@ -29,7 +30,7 @@ label{
 
 .accordion{
     display: block;
-    width: 72%;
+    width: 75%;
 }
 .accordion-button{
     background-color:#09a311;
@@ -40,6 +41,7 @@ label{
 .labelform {
     display: flex;
     align-items: flex-start;
+    color:rgb(4, 3, 59);
     font-weight: 600;
 }
 
@@ -47,4 +49,20 @@ label{
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.table{
+    font-size: small;
+}
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
 }

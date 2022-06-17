@@ -17,22 +17,23 @@ export class AcercaDeEditarComponent implements OnInit {
     console.log(this.persona)
   }
 
-  editarPersona():void{
-    let id:any=localStorage.getItem("id")
-    this.http.getPersonaId(id)
+  editarPersona():any{
+    let idpersona:any=localStorage.getItem("idpersona")
+    this.http.getPersonaId(idpersona)
     .subscribe(data =>{
       this.persona=data
-        console.log(id)
+        console.log(idpersona)
     })  
   }
 
-  actualizar() : void{
+  actualizar():any{
     if(this.persona.id){
       this.http.updatePersona(this.persona)
       .subscribe(data =>{
         console.log(data)
         alert("Datos modificados con exito");
         //window.location.reload()
+        this.router.navigate(['dashboard'])
       })
 
     }else{
@@ -44,10 +45,9 @@ export class AcercaDeEditarComponent implements OnInit {
 changeImag(event:Event):any{
   if(event){
     const imagen= this.persona.imagenPerfil.split('C:\\fakepath\\')
-  console.log(imagen)
-  this.persona.imagenPerfil=imagen[1]
+    console.log(imagen)
+    this.persona.imagenPerfil=imagen[1]
     }
-
   }
 
 

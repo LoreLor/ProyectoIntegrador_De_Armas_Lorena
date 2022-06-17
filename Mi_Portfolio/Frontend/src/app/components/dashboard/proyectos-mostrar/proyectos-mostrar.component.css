@@ -10,12 +10,13 @@
 }
 .btn{
     margin-top: 15px;
-     border-color: #10dd09;
+     border-color: rgb(240, 6, 189);
  }
  .btn:hover{
-     background: linear-gradient(90deg, #10dd09, #d0d308);
-     border: linear-gradient(90deg, #10dd09, #d0d308);    
+     background: linear-gradient(90deg, rgb(240, 6, 189), #f386cf);
+     border: linear-gradient(90deg, rgb(240, 6, 189), #f386cf);    
      color:aliceblue;
+     font-weight: 600;
  }
  .container{
      display: flex;
@@ -36,6 +37,7 @@
      font-weight: 700;
      
  }
+
  
  .labelform {
      display: flex;
@@ -48,3 +50,16 @@
      justify-content: center;
      width: 100%;
  }
+
+ @media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
+}

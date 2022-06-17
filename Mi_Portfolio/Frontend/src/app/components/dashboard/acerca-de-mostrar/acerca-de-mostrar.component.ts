@@ -11,6 +11,7 @@ import { PersonaService } from 'src/app/service/api/persona.service';
 export class AcercaDeMostrarComponent implements OnInit {
   personas: Persona[] = [];
   persona: Persona = new Persona(); 
+  
   constructor(private router:Router, private http:PersonaService) { }
 
   ngOnInit(): void {
@@ -21,14 +22,15 @@ export class AcercaDeMostrarComponent implements OnInit {
 }
 
 
-  editarPersona(id:number): any{
-    localStorage.setItem("id", id.toString());
-    console.log(id)
-    localStorage.getItem("id")
-    window.location.reload()
+  editarPersona(idpersona:number): any{
+    localStorage.setItem("idpersona", idpersona.toString());
+    this.router.navigate(['dashboard/editarPersona'])
+    localStorage.getItem("idpersona")
+    console.log(idpersona)
+    //window.location.reload()
   }
 
-  eliminarPersona(persona:Persona){
+  eliminarPersona(persona:Persona):any{
     this.http.deletePersona(persona)
     .subscribe(data=>{
       this.personas=this.personas.filter(p=>p !== persona)

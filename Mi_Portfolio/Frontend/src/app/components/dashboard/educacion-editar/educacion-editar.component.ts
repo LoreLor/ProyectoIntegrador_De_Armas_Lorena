@@ -19,21 +19,26 @@ export class EducacionEditarComponent implements OnInit {
   }
 
   editarEducacion():void{
-    let id:any=localStorage.getItem("id")
-    this.http.getEducacionById(id)
+    let idEducacion:any=localStorage.getItem("idEducacion")
+    this.http.getEducacionById(idEducacion)
     .subscribe(data =>{
       this.educacion=data
-        console.log(id)
+        console.log(idEducacion)
     })  
   }
 
-  actualizar(){
+  actualizar(): any{
+    if(this.educacion.id){
     this.http.updateEducacion(this.educacion)
     .subscribe(data =>{
       console.log(data)
         alert("Datos modificados con exito");
-        window.location.reload()
+        //window.location.reload()
     })  
+    this.router.navigate(['dashboard'])
+  }else{
+    alert('Los datos que intentas modificar no existen en la BD')
   }
+}
 }
 

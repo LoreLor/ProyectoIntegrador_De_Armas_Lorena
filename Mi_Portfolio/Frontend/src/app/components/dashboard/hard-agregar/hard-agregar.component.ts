@@ -24,8 +24,8 @@ export class HardAgregarComponent implements OnInit {
       .subscribe((data:any) => {
         console.log(data)
         alert("Hard Skill agregado con exito");
-        window.location.reload()
       })
+      window.location.reload()
     }else{
       alert('El nombre de Hard skill que intentas registrar ya existe en BD ')
     }
