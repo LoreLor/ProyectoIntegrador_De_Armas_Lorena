@@ -11,13 +11,13 @@ import { EducacionService } from 'src/app/service/api/educacion.service';
 export class EducacionAgregarComponent implements OnInit {
   educacion:Educacion = new Educacion()
 
-  constructor(private router:Router, private http:EducacionService) { }
+  constructor(private http:EducacionService) { }
 
   ngOnInit(): void {
     console.log(this.educacion)
   }
 
-  guardar(){
+  guardar(): any{
     this.http.addEducacion(this.educacion)
       .subscribe(data => {
         console.log(data)

@@ -21,14 +21,14 @@ export class ExperienciaMostrarComponent implements OnInit {
     )
   }
 
-  editarExperiencia(id:number) : void {
+  editarExperiencia(id:number) : any {
     localStorage.setItem("id", id.toString());
     console.log(id)
     localStorage.getItem("id")
     window.location.reload()
   }
 
-  eliminarExperiencia(experiencia:Experiencia){
+  eliminarExperiencia(experiencia:Experiencia) : any{
     this.http.deleteExperiencia(experiencia)
     .subscribe((data:any)=>{
       this.experiencias=this.experiencias.filter(p=>p !== experiencia)

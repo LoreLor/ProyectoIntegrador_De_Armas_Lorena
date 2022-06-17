@@ -1,36 +1,65 @@
 <div class="container col-md-6">
-    <div class="card body">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        AGREGAR
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <form action="">
-                            <div class="form-group">
-                                <label  class="labelform" for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control"
-                                    placeholder="introduce nombre de carrera" [(ngModel)]="educacion.nombre">
-                            </div>
-                            <div class="form-group">
-                                <label class="labelform" for="anios">Años:</label>
-                                <input type="text" id="anios" name="anios" class="form-control"
-                                    placeholder="introduce tus anios" [(ngModel)]="educacion.anios">
-                            </div>
-                            <div class="form-group">
-                                <label class="labelform" for="descrpcion">Institucion:</label>
-                                <input type="text" id="descripcion" name="descripcion" class="form-control"
-                                    placeholder="institucion" [(ngModel)]="educacion.descripcion">
-                            </div>
-                            <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="card body">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#agregarEducacion"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            AGREGAR
+          </button>
+        </h2>
+        <div
+          id="agregarEducacion"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <form action="">
+              <div class="form-group">
+                <label class="labelform" for="nombre">Educacion-Carrera:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-control"
+                  placeholder="carrera o educacion"
+                  [(ngModel)]="educacion.nombre"
+                />
+              </div>
+              <div class="form-group">
+                <label class="labelform" for="anios">Años:</label>
+                <input
+                  type="text"
+                  id="anios"
+                  name="anios"
+                  class="form-control"
+                  placeholder="tiempo de estudios o cursada"
+                  [(ngModel)]="educacion.anios"
+                />
+              </div>
+              <div class="form-group">
+                <label class="labelform" for="descripcion">Institucion:</label>
+                <input
+                  type="text"
+                  id="descripcion"
+                  name="descripcion"
+                  class="form-control"
+                  placeholder="institucion"
+                  [(ngModel)]="educacion.descripcion"
+                />
+              </div>
+              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>

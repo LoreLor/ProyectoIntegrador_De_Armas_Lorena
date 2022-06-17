@@ -21,17 +21,19 @@ export class SoftMostrarComponent implements OnInit {
     })
   }
 
-  editarSoft(id:number):void {
-    localStorage.setItem("id", id.toString());
-    console.log(id)
-    localStorage.getItem("id")
-    window.location.reload()
+  editarSoft(idSoft:number):any {
+    localStorage.setItem("idSoft", idSoft.toString());
+    this.router.navigate(['dashboard/editarSoft'])
+    localStorage.getItem("idSoft")
+    console.log(idSoft)
+    //window.location.reload()
   }
 
   eliminarSoft(soft:Soft){
     this.http.deleteSoft(soft)
     .subscribe((data:any)=>{
       this.softs=this.softs.filter(p=>p !== soft)
+      this.router.navigate(["dashboard"])
     })
   }
 }

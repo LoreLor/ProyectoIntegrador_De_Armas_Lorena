@@ -1,34 +1,68 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     text-align: center;
     align-items: center;
     margin-top: 5px;
-    background-color:#c0f0b0
-    ;
+    background-color: #c0f0b0;
     color: rgb(4, 3, 59);
 }
-.atributos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.btn{  
-    border-color: #10dd09;   
+
+.btn{
+    margin-top: 10px;
+    border-color: #10dd09;
 }
 .btn:hover{
     background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);      
+    border: linear-gradient(90deg, #10dd09, #d0d308);    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
     width: 100%;
     flex-direction: column;
-   
+}
+label{
+    margin: 5px;
+}
+
+.accordion{
+    display: block;
+    width: 75%;
+}
+.accordion-button{
+    background-color:#09a311;
+    color: white;
+    font-weight: 700;
+    
 }
 .labelform {
     display: flex;
     align-items: flex-start;
+    color:rgb(4, 3, 59);
+    font-weight: 600;
 }
+
+.atributos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .table{
-    font-size:0.7rem;
+    font-size: small;
+}
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
 }

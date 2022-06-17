@@ -18,20 +18,21 @@ export class SoftEditarComponent implements OnInit {
     console.log(this.soft)
   }
 
-  editarSoft():void{
-    let id:any = localStorage.getItem("id")
-    this.http.getSoftById(id)
-    .subscribe((data:any) => {
+  editarSoft():any{
+    let idSoft:any = localStorage.getItem("idSoft")
+    this.http.getSoftById(idSoft)
+    .subscribe(data => {
       this.soft=data
-      console.log(id)
+      console.log(idSoft)
     })
   }
 
-  actualizar() : void {
+  actualizar() : any {
     this.http.updateSoft(this.soft)
-    .subscribe((data:any) => {
+    .subscribe(data => {
       console.log(data)
       alert("SoftSkill creada con exito")
+      this.router.navigate(['dashboard'])
     })
   }
 }

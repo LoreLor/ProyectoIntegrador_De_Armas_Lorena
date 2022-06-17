@@ -14,14 +14,34 @@
 } 
 
 .btn{
-    border-color: #1ba708;
+    background-color: #d2f50b;
+    border-color: #28a708;
     color:#05215e ;
     font-weight: 600;
 }
 .btn:hover{
-    background: linear-gradient(90deg, #46df09, #c8f036);
-    border: linear-gradient(90deg, #50c322, #c3f021);   
-    color:rgb(29, 16, 104);
+    background: linear-gradient(90deg, #169b04, #c8f036);
+    border: linear-gradient(90deg, #169b04, #c3f021);   
+    color:rgb(243, 237, 236);
     font-weight: 600;
     transform: scale(1.3);
+}
+.persona{
+    margin-bottom: 5%;
+}
+
+.educacion{
+    margin-bottom: 5%;
+}
+.hard{
+    margin-bottom: 5%;
+}
+.soft{
+    margin-bottom: 5%;
+}
+.experiencia{
+    margin-bottom: 5%;
+}
+.proyectos{
+    margin-bottom: 5%;
 }

@@ -10,13 +10,14 @@
 }
 
 .btn{
-   margin-top: 15px;
-    border-color: #10dd09;
+    margin-top: 15px;
+    border-color: salmon;
 }
 .btn:hover{
-    background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);    
+    background: linear-gradient(90deg, salmon, rgb(238, 187, 182));
+    border: linear-gradient(90deg, salmon, rgb(238, 187, 182));    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
@@ -37,10 +38,21 @@ label{
     font-weight: 700;
     
 }
-
 .labelform {
     display: flex;
     align-items: flex-start;
-    color:rgb(4, 3, 59);
     font-weight: 600;
+}
+
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
 }

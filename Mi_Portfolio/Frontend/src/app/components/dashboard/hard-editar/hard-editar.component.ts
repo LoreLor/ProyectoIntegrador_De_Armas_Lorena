@@ -18,20 +18,21 @@ export class HardEditarComponent implements OnInit {
     console.log(this.hardskill)
   }
 
-  editarHard():void{
-    let id:any=localStorage.getItem("id")
-    this.http.getHardById(id)
+  editarHard():any{
+    let idHard:any=localStorage.getItem("idHard")
+    this.http.getHardById(idHard)
     .subscribe((data:any) => {
       this.hardskill=data
-      console.log(id)  
+      console.log(idHard)  
     })
   }
 
-  actualizar():void{
+  actualizar():any{
     this.http.updateHard(this.hardskill)
-    .subscribe((data:any) => {
+    .subscribe(data => {
       console.log(data)
-      alert("HardSkill modificada con exito")    
+      alert("HardSkill modificada con exito")  
+      this.router.navigate(['dashboard'])  
     })
   }
 }

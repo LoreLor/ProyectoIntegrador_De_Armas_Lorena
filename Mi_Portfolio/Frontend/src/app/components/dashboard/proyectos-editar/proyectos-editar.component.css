@@ -1,0 +1,59 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    background-color:#f386cf;
+    color: rgb(4, 3, 59);
+}
+
+.btn{
+   margin-top: 15px;
+    border-color: rgb(240, 6, 189);
+}
+.btn:hover{
+    background: linear-gradient(90deg, rgb(240, 6, 189), #f386cf);
+    border: linear-gradient(90deg, rgb(240, 6, 189), #f386cf);    
+    color:aliceblue;
+    font-weight: 600;
+}
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+label{
+    margin: 5px;
+}
+
+.accordion{
+    display: block;
+    width: 70%;
+}
+.accordion-button{
+    background-color:rgb(240, 6, 189);
+    color: white;
+    font-weight: 700;
+    
+}
+
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    color:rgb(4, 3, 59);
+    font-weight: 600;
+}
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
+}

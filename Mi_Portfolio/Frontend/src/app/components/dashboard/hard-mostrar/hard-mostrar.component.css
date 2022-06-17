@@ -1,33 +1,65 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     text-align: center;
     align-items: center;
     margin-top: 5px;
     background-color:rgb(241, 239, 105);
     color: rgb(4, 3, 59);
 }
-.atributos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.btn{  
-    border-color: #10dd09;   
+
+.btn{
+   margin-top: 8px;
+    border-color: rgb(228, 206, 7);
 }
 .btn:hover{
-    background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);      
+    background: linear-gradient(90deg, rgb(228, 206, 7), rgb(241, 239, 105));
+    border: linear-gradient(90deg, rgb(228, 206, 7), rgb(241, 239, 105));    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
     width: 100%;
     flex-direction: column;
-   
 }
+label{
+    margin: 5px;
+}
+
+.accordion{
+    display: block;
+    width: 72%;
+}
+.accordion-button{
+    background-color:rgb(228, 206, 7);
+    color: white;
+    font-weight: 700;
+    
+}
+
 .labelform {
     display: flex;
     align-items: flex-start;
+    color:rgb(4, 3, 59);
+    font-weight: 600;
 }
-.table{
-    font-size:0.8rem;
+.atributos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
 }

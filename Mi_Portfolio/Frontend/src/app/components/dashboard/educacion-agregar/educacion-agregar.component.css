@@ -11,12 +11,13 @@
 
 .btn{
    margin-top: 15px;
-    border-color: #10dd09;
+    border-color: rgb(31, 214, 199);
 }
 .btn:hover{
-    background: linear-gradient(90deg, #10dd09, #d0d308);
-    border: linear-gradient(90deg, #10dd09, #d0d308);    
+    background: linear-gradient(90deg, rgb(31, 214, 199), rgb(149, 238, 231));
+    border: linear-gradient(90deg, rgb(31, 214, 199), rgb(149, 238, 231));    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
@@ -43,4 +44,15 @@ label{
     font-weight: 600;
 }
 
+@media screen and (max-width: 770px) {
+    .accordion{
+        display: block;
+        width: 100%;
+    }
+}
 
+@media screen and (max-width: 450px) {
+    .table{
+        font-size:x-small;
+    }
+}
