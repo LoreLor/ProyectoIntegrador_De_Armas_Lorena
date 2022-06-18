@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EducacionEditarComponent } from './components/dashboard/educacion-editar/educacion-editar.component';
 import { HardEditarComponent } from './components/dashboard/hard-editar/hard-editar.component';
 import { SoftEditarComponent } from './components/dashboard/soft-editar/soft-editar.component';
+import { ProyectosEditarComponent } from './components/dashboard/proyectos-editar/proyectos-editar.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'dashboard/editarEducacion', component: EducacionEditarComponent},
   {path:'dashboard/editarHard', component: HardEditarComponent},
   {path:'dashboard/editarSoft', component: SoftEditarComponent},
+  {path:'dashboard/editarProyecto', component: ProyectosEditarComponent},
 
 
 ];

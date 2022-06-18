@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { ProyectosService } from 'src/app/service/api/proyectos.service';
 
@@ -10,7 +11,7 @@ import { ProyectosService } from 'src/app/service/api/proyectos.service';
 export class ProyectosEditarComponent implements OnInit {
   proyecto:Proyecto = new Proyecto();
 
-  constructor(private http:ProyectosService) { }
+  constructor(private router:Router, private http:ProyectosService) { }
 
   ngOnInit(): void {
     this.editarProyecto()
@@ -18,11 +19,11 @@ export class ProyectosEditarComponent implements OnInit {
   }
 
   editarProyecto():any{
-    let id:any=localStorage.getItem("id")
-    this.http.getProyectoId(id)
+    let idproyecto:any=localStorage.getItem("idproyecto")
+    this.http.getProyectoId(idproyecto)
     .subscribe(data =>{
       this.proyecto=data
-        console.log(id)
+        console.log(idproyecto)
     })  
   }
 
@@ -33,6 +34,7 @@ export class ProyectosEditarComponent implements OnInit {
         console.log(data)
         alert("Datos modificados con exito");
         //window.location.reload()
+        this.router.navigate(["dashboard"])
       })
 
     }else{
