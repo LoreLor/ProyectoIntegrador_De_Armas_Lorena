@@ -10,7 +10,7 @@
 }
 
 .btn{
-    margin-top: 10px;
+  
     border-color: rgb(31, 214, 199);
 }
 .btn:hover{
@@ -30,7 +30,7 @@ label{
 
 .accordion{
     display: block;
-    width: 72%;
+    width: 70%;
 }
 .accordion-button{
     background-color:rgb(31, 214, 199);
@@ -56,9 +56,10 @@ label{
 
 @media screen and (max-width: 770px) {
     .accordion{
-        display: block;
+        display:block;
         width: 100%;
     }
+  
 }
 
 @media screen and (max-width: 450px) {
