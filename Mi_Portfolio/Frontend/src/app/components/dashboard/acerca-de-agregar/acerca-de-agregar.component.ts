@@ -1,4 +1,4 @@
-import { AcercaDeEditarComponent } from './../acerca-de-editar/acerca-de-editar.component';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/models/Persona';

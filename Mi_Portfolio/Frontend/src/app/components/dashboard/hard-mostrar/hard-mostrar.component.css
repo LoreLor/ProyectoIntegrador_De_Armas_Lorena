@@ -10,7 +10,7 @@
 }
 
 .btn{
-   margin-top: 8px;
+
     border-color: rgb(228, 206, 7);
 }
 .btn:hover{
@@ -30,7 +30,7 @@ label{
 
 .accordion{
     display: block;
-    width: 72%;
+    width: 70%;
 }
 .accordion-button{
     background-color:rgb(228, 206, 7);

@@ -17,6 +17,7 @@
     background: linear-gradient(90deg, #10dd09, #d0d308);
     border: linear-gradient(90deg, #10dd09, #d0d308);    
     color:aliceblue;
+    font-weight: 600;
 }
 .container{
     display: flex;
@@ -29,7 +30,7 @@ label{
 
 .accordion{
     display: block;
-    width: 72%;
+    width: 70%;
 }
 .accordion-button{
     background-color:#09a311;

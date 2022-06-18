@@ -9,7 +9,7 @@
     color: rgb(4, 3, 59);
 }
 .btn{
-    margin-top: 15px;
+    
      border-color: rgb(240, 6, 189);
  }
  .btn:hover{
@@ -23,20 +23,25 @@
      width: 100%;
      flex-direction: column;
  }
+ 
  label{
      margin: 5px;
  }
  
  .accordion{
      display: block;
-     width: 72%;
+     width: 70%;
  }
+
  .accordion-button{
      background-color:rgb(240, 6, 189);
      color: white;
-     font-weight: 700;
-     
+     font-weight: 700;   
  }
+
+ .table{
+    font-size: small;
+}
 
  
  .labelform {
