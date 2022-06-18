@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { ProyectosService } from 'src/app/service/api/proyectos.service';
 
@@ -10,26 +11,28 @@ import { ProyectosService } from 'src/app/service/api/proyectos.service';
 export class ProyectosMostrarComponent implements OnInit {
   proyectos:Proyecto[] = [];
   proyecto:Proyecto = new Proyecto();
-  constructor(private http:ProyectosService) { }
+  constructor(private router:Router, private http:ProyectosService) { }
 
   ngOnInit(): void {
     this.http.getProyecto()
-    .subscribe((data:any)=>
-    this.proyectos = data
-    )
+    .subscribe(data=>{
+      this.proyectos = data
+    })
   }
 
-  editarProyecto(id:number) : any {
-    localStorage.setItem("id", id.toString());
-    console.log(id)
+  editarProyecto(idproyecto:number) : any {
+    localStorage.setItem("idproyecto", idproyecto.toString());
+    this.router.navigate(['dashboard/editarProyecto'])
     localStorage.getItem("id")
-    window.location.reload()
+    console.log(idproyecto)
+    //window.location.reload()
   }
 
   eliminarProyecto(proyecto:Proyecto) : any {
     this.http.deleteProyecto(proyecto)
-    .subscribe((data:any) =>{
+      .subscribe(data =>{
       this.proyectos = this.proyectos.filter(p=>p !== proyecto)
+      this.router.navigate(["dashboard"])
     })
   }
 

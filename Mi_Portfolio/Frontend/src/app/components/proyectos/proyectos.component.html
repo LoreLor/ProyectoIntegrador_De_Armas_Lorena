@@ -1,58 +1,94 @@
 <div class="row">
-    <h1>Proyectos Realizados</h1>
-    <div class="contenedor">
-        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <ul >
-                <li>
-                    <h3>Portfolio</h3>
-                    <span><strong>Descripcion:</strong></span>
-                    <p>Angular - EN PROCESO -Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde cupiditate, est totam impedit?</p>
-                </li>
-            </ul>
-        </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-                <img src="../../../assets/portfolio.png" class="img-fluid img-proyecto">
-            </div>
+  <h1>Proyectos Realizados</h1>
+  <div class="contenedor" *ngFor="let proyecto of proyectos">
+    <div class="col-sm-12 col-md-7 col-lg-7 parte1">
+      <ul>
+        <li>
+          <h3>{{ proyecto.nombre }}</h3>
+          <span><strong>Descripcion:</strong></span>
+          <p>
+            Angular - EN PROCESO -Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio
+            enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde
+            cupiditate, est totam impedit?
+          </p>
+          <span><strong>Stack:</strong></span>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos vitae
+            minus quidem recusandae odio? Doloribus, expedita sit. Autem sint
+            aperiam, animi cupiditate eum vitae dolore. Consectetur, maiores!
+            Dolore, aspernatur nobis.
+          </p>
+        </li>
+      </ul>
+      </div>
+      <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+        <img
+        src="../../../assets/{{proyecto.imagenProyecto}}"
+        alt="capturaProyecto"
+        class="img-fluid" 
+        id="img-proyecto"
+        />
+      </div>
 
-        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <ul >
-                <li>
-                    <h3>Ecommerce</h3>
-                    <span><strong>Descripcion:</strong></span>
-                    <p>React - EN PROCESO -Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde cupiditate, est totam impedit?</p>
-                </li>
-            </ul>
-        </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-                <img src="../../../assets/app-ecommerce.png" class="img-fluid img-proyecto">
-            </div>
-        
-
-        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <ul>
-                <li>
-                    <h3>App-Countries</h3>
-                    <span><strong>Descripcion:</strong></span>
-                    <p>React - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde cupiditate, est totam impedit?</p>
-                </li>
-            </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-                <img src="../../../assets/3.png" class="img-fluid img-proyecto">
-            </div>
-       
-
-        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <ul >
-                <li>
-                    <h3>App-Tasks</h3>
-                    <span><strong>Descripcion:</strong></span>
-                    <p>Angular - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde cupiditate, est totam impedit?</p>
-                </li>
-            </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-                <img src="../../../assets/app-task (2).png" class="img-fluid img-proyecto">
-            </div>
+    <!-- <div class="col-sm-12 col-md-7 col-lg-7 parte1">
+      <ul>
+        <li>
+          <h3>Ecommerce</h3>
+          <span><strong>Descripcion:</strong></span>
+          <p>
+            React - EN PROCESO -Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Ullam dolor nemo quod sint officiis ipsa optio
+            enim nihil aperiam quia dolore sequi cumque, officia aspernatur unde
+            cupiditate, est totam impedit?
+          </p>
+        </li>
+      </ul>
     </div>
+    <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+      <img
+        src="../../../assets/app-ecommerce.png"
+        class="img-fluid img-proyecto"
+      />
+    </div>
+
+    <div class="col-sm-12 col-md-7 col-lg-7 parte1">
+      <ul>
+        <li>
+          <h3>App-Countries</h3>
+          <span><strong>Descripcion:</strong></span>
+          <p>
+            React - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam
+            quia dolore sequi cumque, officia aspernatur unde cupiditate, est
+            totam impedit?
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+      <img src="../../../assets/3.png" class="img-fluid img-proyecto" />
+    </div>
+
+    <div class="col-sm-12 col-md-7 col-lg-7 parte1">
+      <ul>
+        <li>
+          <h3>App-Tasks</h3>
+          <span><strong>Descripcion:</strong></span>
+          <p>
+            Angular - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ullam dolor nemo quod sint officiis ipsa optio enim nihil aperiam
+            quia dolore sequi cumque, officia aspernatur unde cupiditate, est
+            totam impedit?
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+      <img
+        src="../../../assets/app-task (2).png"
+        class="img-fluid img-proyecto"
+      />
+    </div> -->
+  </div>
 </div>
