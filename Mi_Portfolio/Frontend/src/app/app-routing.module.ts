@@ -7,15 +7,19 @@ import { EducacionEditarComponent } from './components/dashboard/educacion-edita
 import { HardEditarComponent } from './components/dashboard/hard-editar/hard-editar.component';
 import { SoftEditarComponent } from './components/dashboard/soft-editar/soft-editar.component';
 import { ProyectosEditarComponent } from './components/dashboard/proyectos-editar/proyectos-editar.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'dashboard', component: DashboardComponent},
+  {path:'home', component: HomeComponent},
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'login', component: LoginComponent},
+  {path:'dashboard', component: DashboardComponent}, 
   {path:'dashboard/editarPersona', component: AcercaDeEditarComponent},
   {path:'dashboard/editarEducacion', component: EducacionEditarComponent},
   {path:'dashboard/editarHard', component: HardEditarComponent},
   {path:'dashboard/editarSoft', component: SoftEditarComponent},
   {path:'dashboard/editarProyecto', component: ProyectosEditarComponent},
+
 
 
 ];

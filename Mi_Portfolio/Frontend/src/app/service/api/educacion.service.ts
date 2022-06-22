@@ -1,3 +1,4 @@
+import { URLBack } from 'src/app/server';
 import { Observable } from 'rxjs';
 import { Educacion } from './../../models/Educacion';
 import { HttpClient } from '@angular/common/http';
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EducacionService {
-  Url="http://localhost:8080/api/educacion";
+  Url=`${URLBack}/api/educacion`;
 
   constructor(private http: HttpClient) { }
 

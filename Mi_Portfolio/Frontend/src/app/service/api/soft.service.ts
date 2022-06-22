@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Soft } from 'src/app/models/Soft';
+import { URLBack } from 'src/app/server';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SoftService {
-  Url="http://localhost:8080/api/softskills";
+  Url=`${URLBack}/api/softskills`;
 
   constructor(private http:HttpClient) { }
 

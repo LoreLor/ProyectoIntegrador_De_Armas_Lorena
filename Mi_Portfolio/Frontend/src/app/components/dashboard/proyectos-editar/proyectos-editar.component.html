@@ -16,7 +16,7 @@
         </h2>
         <div
           id="editarProyecto"
-          class="accordion-collapse collapse"
+          class="accordion-collapse collapse show"
           aria-labelledby="panelsStayOpen-headingOne"
         >
           <div class="accordion-body">
@@ -25,7 +25,6 @@
                 <label class="labelform" for="nombre">Proyecto:</label>
                 <input
                   type="text"
-                  id="nombre"
                   name="nombre"
                   class="form-control"
                   [(ngModel)]="proyecto.nombre"
@@ -35,7 +34,6 @@
                 <label class="labelform" for="stack">Stack:</label>
                 <input
                   type="text"
-                  id="stack"
                   name="stack"
                   class="form-control"
                   placeholder="introduce techs empleadas"
@@ -46,7 +44,6 @@
                 <label class="labelform" for="descripcion">Descripcion:</label>
                 <input
                   type="text"
-                  id="descripcion"
                   name="descripcion"
                   class="form-control"
                   placeholder="intruduce una breve descripcion del proyecto"
@@ -59,7 +56,6 @@
                 >
                 <input
                   type="file"
-                  id="imagenproyecto"
                   name="imagenProyecto"
                   class="form-control"
                   placeholder="introduce una captura del proyecto"

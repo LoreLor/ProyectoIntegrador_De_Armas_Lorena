@@ -1,8 +1,8 @@
 <div class="container col-md-6">
   <div class="card body">
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample2">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne2">
           <button
             class="accordion-button"
             type="button"
@@ -17,54 +17,87 @@
         <div
           id="agregarPersona"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOne2"
+          data-bs-parent="#accordionExample2"
         >
           <div class="accordion-body">
-            <form action="controller" enctype="multipart/form-data">
+            <form [formGroup]="form">
               <div class="form-group">
                 <label class="labelform" for="nombres">Nombres:</label>
                 <input
-                  type="text"
-                  id="nombres"
-                  name="nombres"
                   class="form-control"
+                  type="text"
+                  name="nombres"
+                  value="nombres"
+                  formControlName="nombres"
                   placeholder="introduce tus nombres"
-                  [(ngModel)]="persona.nombres"
+                  [ngClass]="{'is-invalid':Nombres?.errors && Nombres?.touched, 'is-valid':!Nombres?.errors && Nombres?.touched}"
                 />
+                <div *ngIf="Nombres?.errors && Nombres?.touched">
+                  <p *ngIf="Nombres?.hasError('required')" class="text-danger">
+                    Nombres requeridos
+                  </p>
+                  <p *ngIf="Nombres?.hasError('nombres')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="apellidos">Apellidos:</label>
                 <input
                   type="text"
-                  id="apellidos"
                   name="apellidos"
                   class="form-control"
                   placeholder="introduce tus apellidos"
-                  [(ngModel)]="persona.apellidos"
+                  formControlName="apellidos"
+                  [ngClass]="{'is-invalid':Apellidos?.errors && Apellidos?.touched, 'is-valid':!Apellidos?.errors && Apellidos?.touched}"
                 />
+                <div *ngIf="Apellidos?.errors && Apellidos?.touched">
+                  <p *ngIf="Apellidos?.hasError('required')" class="text-danger">
+                    El apellido es requerido
+                  </p>
+                  <p *ngIf="Apellidos?.hasError('apellidos')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="titulo">Titulo:</label>
                 <input
                   type="text"
-                  id="titulo"
                   name="titulo"
                   class="form-control"
+                  formControlName="titulo"
                   placeholder="ocupacion - formacion"
-                  [(ngModel)]="persona.titulo"
+                  [ngClass]="{'is-invalid':Titulo?.errors && Titulo?.touched, 'is-valid':!Titulo?.errors && Titulo?.touched}"
                 />
+                <div *ngIf="Titulo?.errors && Titulo?.touched">
+                  <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                    Dato requerido
+                  </p>
+                  <p *ngIf="Titulo?.hasError('titulo')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Descripcion:</label>
                 <input
                   type="text"
-                  id="descripcion"
                   name="descripcion"
                   class="form-control"
-                  placeholder="introduce una breve descripcion acerca de ti"
-                  [(ngModel)]="persona.descripcion"
+                  formControlName="descripcion"
+                  placeholder="introduce una breve descripcion acerca de ti"      
+                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
                 />
+                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                    Descripcion requerida
+                  </p>
+                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="imagenPerfil"
@@ -72,15 +105,23 @@
                 >
                 <input
                   type="file"
-                  id="imagenPerfil"
                   name="imagenPerfil"
                   class="form-control"
                   placeholder="introduce una imagen"
+                  formControlName="imagenPerfil"
                   (change)="changeImag($event)"
-                  [(ngModel)]="persona.imagenPerfil"
-                />
+                  [ngClass]="{'is-invalid':ImagenPerfil?.errors && ImagenPerfil?.touched, 'is-valid':!ImagenPerfil?.errors && ImagenPerfil?.touched}"
+                  />
+                  <div *ngIf="ImagenPerfil?.errors && ImagenPerfil?.touched">
+                    <p *ngIf="ImagenPerfil?.hasError('required')" class="text-danger">
+                      Foto requerida
+                    </p>
+                    <p *ngIf="ImagenPerfil?.hasError('imagenPerfil')" class="text-danger">
+                      Ingrese un formato valido 
+                    </p>
+                  </div>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              <button (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

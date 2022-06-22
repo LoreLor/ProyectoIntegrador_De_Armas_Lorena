@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/Educacion';
 import { EducacionService } from 'src/app/service/api/educacion.service';
@@ -10,12 +11,33 @@ import { EducacionService } from 'src/app/service/api/educacion.service';
 })
 export class EducacionEditarComponent implements OnInit {
   educacion:Educacion = new Educacion();
+  form:FormGroup;
   
-  constructor(private router:Router, private http:EducacionService) { }
+  constructor(private router:Router, private http:EducacionService, private formBuilder:FormBuilder) {
+    this.form = this.formBuilder.group(
+      {
+        nombre:['educacion.nombre',[Validators.required]],
+        anios:['educacion.anios',[Validators.required]],
+        descripcion:['educacion.descripcion',[Validators.required, Validators.maxLength(225)]],     
+      }
+    )
+   }
 
   ngOnInit(): void {
     this.editarEducacion()
     console.log(this.educacion)
+  }
+
+  get Nombre(){
+    return this.form.get("nombre")
+  }
+
+  get Anios(){
+    return this.form.get("anios")
+  }
+
+  get Descripcion(){
+    return this.form.get("descripcion")
   }
 
   editarEducacion():void{
@@ -27,7 +49,8 @@ export class EducacionEditarComponent implements OnInit {
     })  
   }
 
-  actualizar(): any{
+  actualizar(event:Event): any{
+    event.preventDefault;
     if(this.educacion.id){
     this.http.updateEducacion(this.educacion)
     .subscribe(data =>{

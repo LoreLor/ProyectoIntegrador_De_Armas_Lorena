@@ -1,3 +1,4 @@
+import { URLBack } from 'src/app/server';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { Proyecto } from 'src/app/models/Proyecto';
   providedIn: 'root'
 })
 export class ProyectosService {
-  Url="http://localhost:8080/api/proyectos";
+  Url=`${URLBack}/api/proyectos`;
 
   constructor(private http:HttpClient) { }
 

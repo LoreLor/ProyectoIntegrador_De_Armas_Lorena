@@ -6,9 +6,9 @@
     <div class="card body">
      
         <div class="atributos">
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample10">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
+              <h2 class="accordion-header" id="headingOne14">
                 <button
                   class="accordion-button"
                   type="button"
@@ -23,8 +23,8 @@
               <div
                 id="mostarProyecto"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
+                aria-labelledby="headingOne14"
+                data-bs-parent="#accordionExample10"
               >
                 <div class="accordion-body">
   
@@ -42,7 +42,7 @@
                 </thead>
                 <tbody>  
                   <tr *ngFor="let proyecto of proyectos">
-                    <th scope="row">{{proyecto.id}}</th>
+                    <th scope="row" key="proyecto.id">{{proyecto.id}}</th>
                     <td>{{proyecto.nombre}}</td>
                     <td>{{proyecto.stack}}</td>
                     <td>{{proyecto.descripcion}}</td>

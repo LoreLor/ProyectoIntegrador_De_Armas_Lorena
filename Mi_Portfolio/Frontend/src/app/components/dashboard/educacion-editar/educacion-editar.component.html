@@ -2,56 +2,86 @@
   <div class="card body">
     <div class="accordion" id="accordionPanelsStayOpenExample">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne5">
           <button
             class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#editarEducacion"
             aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseOne"
+            aria-controls="panelsStayOpen-collapseOne5"
           >
             EDITAR
           </button>
         </h2>
         <div
           id="editarEducacion"
-          class="accordion-collapse collapse"
-          aria-labelledby="panelsStayOpen-headingOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne5"
         >
           <div class="accordion-body">
-            <form action="">
+            <form [formGroup]="form">
               <div class="form-group">
-                <label class="labelform" for="nombre">Carrera:</label>
+                <label class="labelform" for="nombre">Educacion-Carrera:</label>
                 <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
                   class="form-control"
-                  [(ngModel)]="educacion.nombre"
+                  type="text"
+                  name="nombre"
+                  value={{educacion.nombre}}
+                  placeholder="Agregar carrera o educacion"
+                  formControlName="nombre"
+                  [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}"
                 />
+                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                  <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                    Nombre de Carrera requerido
+                  </p>
+                  <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="anios">Años:</label>
                 <input
                   type="text"
-                  id="anios"
                   name="anios"
+                  value={{educacion.anios}}
                   class="form-control"
-                  [(ngModel)]="educacion.anios"
+                  formControlName="anios"
+                  placeholder="tiempo de estudios o cursada"
+                  [ngClass]="{'is-invalid':Anios?.errors && Anios?.touched, 'is-valid':!Anios?.errors && Anios?.touched}"
                 />
+                <div *ngIf="Anios?.errors && Anios?.touched">
+                  <p *ngIf="Anios?.hasError('required')" class="text-danger">
+                    Duracion de estudios
+                  </p>
+                  <p *ngIf="Anios?.hasError('anios')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+              </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Institucion:</label>
                 <input
                   type="text"
-                  id="descripcion"
                   name="descripcion"
+                  value={{educacion.descripcion}}
                   class="form-control"
-                  [(ngModel)]="educacion.descripcion"
+                  placeholder="institucion"
+                  formControlName="descripcion"
+                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
                 />
+                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                    Casa de estudios
+                  </p>
+                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
               </div>
-              <button (click)="actualizar()" class="btn btn-ligth">
+              </div>
+              <button (click)="actualizar($event)" class="btn btn-ligth">
                 Actualizar
               </button>
             </form>

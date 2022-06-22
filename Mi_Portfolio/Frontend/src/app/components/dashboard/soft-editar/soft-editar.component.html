@@ -2,7 +2,7 @@
   <div class="card body">
     <div class="accordion" id="accordionPanelsStayOpenExample">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne0">
           <button
             class="accordion-button"
             type="button"
@@ -16,32 +16,52 @@
         </h2>
         <div
           id="editarSoft"
-          class="accordion-collapse collapse"
-          aria-labelledby="panelsStayOpen-headingOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne0"
         >
           <div class="accordion-body">
-            <form action="">
+            <form [formGroup]="form" >
               <div class="form-group">
                 <label class="labelform" for="title">Nombre:</label>
                 <input
                   type="text"
-                  id="title"
                   name="title"
+                  value="title"
                   class="form-control"
+                  formControlName="title"
                   [(ngModel)]="soft.title"
+                  [ngClass]="{'is-invalid':Title?.errors && Title?.touched, 'is-valid':!Title?.errors && Title?.touched}"
                 />
+                <div *ngIf="Title?.errors && Title?.touched">
+                  <p *ngIf="Title?.hasError('required')" class="text-danger">
+                    El Nombre o Cualidad es requerido/a
+                  </p>
+                  <p *ngIf="Title?.hasError('title')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Descripcion:</label>
                 <input
                   type="text"
-                  id="descripcion"
+                  value="descripcion"
                   name="descripcion"
                   class="form-control"
+                  formControlName="descripcion"
                   [(ngModel)]="soft.descripcion"
+                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
                 />
+                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                    Descripcion requerida
+                  </p>
+                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                    Formato invalido 
+                  </p>
+                </div>
               </div>
-              <button (click)="actualizar()" class="btn btn-ligth">
+              <button (click)="actualizar($event)" class="btn btn-ligth">
                 Actualizar
               </button>
             </form>
