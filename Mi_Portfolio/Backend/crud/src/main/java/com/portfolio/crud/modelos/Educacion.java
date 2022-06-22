@@ -15,8 +15,8 @@ import javax.persistence.Table;
 @Table(name="educacion")
 public class Educacion {
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
     
     @Column(name = "nombre", length = 60, nullable = false)
@@ -31,6 +31,7 @@ public class Educacion {
     
 /* CONSTRUCTORES */   
     public Educacion() {}
+    
 
     public Educacion(Long id, String nombre, String anios, String descripcion) {
         this.id = id;

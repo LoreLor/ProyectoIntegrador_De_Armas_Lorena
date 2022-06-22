@@ -11,7 +11,7 @@ import org.springframework.data.repository.Repository;
 public interface EducacionRepository extends Repository<Educacion, Long> {
     List<Educacion>findAll();
     Educacion findById(Long id);
-    Educacion save(Educacion persona);
-    Educacion delete(Educacion persona);
+    Educacion save(Educacion educacion);
+    Educacion delete(Educacion educacion);
  
 }

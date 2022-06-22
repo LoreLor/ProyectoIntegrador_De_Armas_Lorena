@@ -23,10 +23,7 @@ public class HardSkills {
     private Integer percent;
 
 
-
-
     public HardSkills() {}
-
 
     public HardSkills(Long id, String title, Integer percent) {
         this.id = id;
