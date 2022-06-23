@@ -25,7 +25,7 @@ public class SoftSkillsController {
     @Autowired
     private SoftSkillsService service;
 
-    @GetMapping("/softskills")
+    @GetMapping(value="/softskills")
     public List<SoftSkills>mostrarSoftSkills() {
         return service.mostrarSoftSkills();
     }
@@ -40,7 +40,7 @@ public class SoftSkillsController {
         return service.agregarSoftSkills(softskills);
     }
 
-    @PutMapping(value = "/softskills")
+    @PutMapping(value = "/softskills/{id}")
     public SoftSkills editarSoftSkills(@PathVariable Long id, @RequestBody SoftSkills softskills){
         return service.editarSoftSkills(softskills);
     }
