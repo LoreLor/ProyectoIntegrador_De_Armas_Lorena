@@ -21,7 +21,7 @@
             data-bs-parent="#accordionExample9"
           >
             <div class="accordion-body">
-              <form action="controller" enctype="multipart/form-data">
+              <form [formGroup]="form" enctype="multipart/form-data">
                 <div class="form-group">
                   <label class="labelform" for="nombre">Proyecto:</label>
                   <input
@@ -29,18 +29,36 @@
                     name="nombre"
                     class="form-control"
                     placeholder="proyecto"
-                    [(ngModel)]="proyecto.nombre"
-                  />
+                    formControlName="nombre"
+                    [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Stack?.errors && Stack?.touched}"
+                />
+                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                  <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                    Nombre del Proyecto requerido
+                  </p>
+                  <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
                 </div>
                 <div class="form-group">
                   <label class="labelform" for="stack">Stack:</label>
                   <input
+                    class="form-control"
                     type="text"
                     name="stack"
-                    class="form-control"
                     placeholder="tech empleadas"
-                    [(ngModel)]="proyecto.stack"
-                  />
+                    formControlName="stack"
+                    [ngClass]="{'is-invalid':Stack?.errors && Stack?.touched, 'is-valid':!Stack?.errors && Stack?.touched}"
+                />
+                <div *ngIf="Stack?.errors && Stack?.touched">
+                  <p *ngIf="Stack?.hasError('required')" class="text-danger">
+                    Nombre de Tech requerido
+                  </p>
+                  <p *ngIf="Stack?.hasError('stack')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
                 </div>
                 <div class="form-group">
                   <label class="labelform" for="descripcion">Descripcion:</label>
@@ -49,8 +67,17 @@
                     name="descripcion"
                     class="form-control"
                     placeholder="descripcion del proyecto"
-                    [(ngModel)]="proyecto.descripcion"
-                  />
+                    formControlName="descripcion"
+                    [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
+                    />
+                    <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                      <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                        Nombre de Skill requerido
+                      </p>
+                      <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                        Ingrese un formato valido 
+                      </p>
+                    </div>
                 </div>
                 <div class="form-group">
                   <label class="labelform" for="imagenProyecto"
@@ -61,11 +88,20 @@
                     name="imagenProyecto"
                     class="form-control"
                     placeholder="introduce una captura de tu proyecto"
+                    formControlName="imagenProyecto"
                     (change)="changeImag($event)"
-                    [(ngModel)]="proyecto.imagenProyecto"
-                  />
+                    [ngClass]="{'is-invalid':ImagenProyecto?.errors && ImagenProyecto?.touched, 'is-valid':!ImagenProyecto?.errors && Descripcion?.touched}"
+                    />
+                    <div *ngIf="ImagenProyecto?.errors && ImagenProyecto?.touched">
+                      <p *ngIf="ImagenProyecto?.hasError('required')" class="text-danger">
+                        Nombre de Skill requerido
+                      </p>
+                      <p *ngIf="ImagenProyecto?.hasError('imagenProyecto')" class="text-danger">
+                        Ingrese un formato valido 
+                      </p>
+                    </div>
                 </div>
-                <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+                <button [disabled]="!form.valid" type="button" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
               </form>
             </div>
           </div>

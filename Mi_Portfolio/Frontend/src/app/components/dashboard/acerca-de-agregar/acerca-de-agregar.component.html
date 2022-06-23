@@ -35,7 +35,7 @@
                 />
                 <div *ngIf="Nombres?.errors && Nombres?.touched">
                   <p *ngIf="Nombres?.hasError('required')" class="text-danger">
-                    Nombres requeridos
+                    Nombre o Nombres requeridos
                   </p>
                   <p *ngIf="Nombres?.hasError('nombres')" class="text-danger">
                     Ingrese un formato valido 
@@ -54,7 +54,7 @@
                 />
                 <div *ngIf="Apellidos?.errors && Apellidos?.touched">
                   <p *ngIf="Apellidos?.hasError('required')" class="text-danger">
-                    El apellido es requerido
+                    Apellido o Apellidos requeridos
                   </p>
                   <p *ngIf="Apellidos?.hasError('apellidos')" class="text-danger">
                     Ingrese un formato valido 
@@ -73,7 +73,7 @@
                 />
                 <div *ngIf="Titulo?.errors && Titulo?.touched">
                   <p *ngIf="Titulo?.hasError('required')" class="text-danger">
-                    Dato requerido
+                    Ocupacion requerida
                   </p>
                   <p *ngIf="Titulo?.hasError('titulo')" class="text-danger">
                     Ingrese un formato valido 
@@ -121,7 +121,7 @@
                     </p>
                   </div>
               </div>
-              <button (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
+              <button [disabled]="!form.valid" type="button" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

@@ -21,30 +21,48 @@
           data-bs-parent="#accordionExample7"
         >
           <div class="accordion-body">
-            <form action="">
+            <form [formGroup]="form">
               <div class="form-group">
                 <label class="labelform" for="nombre">Nombre:</label>
                 <input
+                  class="form-control"
                   type="text"
                   name="title"
-                  class="form-control"
+                  formControlName="title"
                   placeholder="introduce nombre de tu skill"
-                  [(ngModel)]="hardskill.title"
+                  [ngClass]="{'is-invalid':Title?.errors && Title?.touched, 'is-valid':!Title?.errors && Title?.touched}"
                 />
+                <div *ngIf="Title?.errors && Title?.touched">
+                  <p *ngIf="Title?.hasError('required')" class="text-danger">
+                    Nombre de Skill requerido
+                  </p>
+                  <p *ngIf="Title?.hasError('title')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="percent">Pocentaje:</label>
                 <input
+                  class="form-control"
                   type="number"
                   min="1"
                   max="100"
                   name="percent"
-                  class="form-control"
+                  formControlName="percent"
                   placeholder="introduce un porcentaje"
-                  [(ngModel)]="hardskill.percent"
+                  [ngClass]="{'is-invalid':Percent?.errors && Percent?.touched, 'is-valid':!Percent?.errors && Percent?.touched}"
                 />
+                <div *ngIf="Percent?.errors && Percent?.touched">
+                  <p *ngIf="Percent?.hasError('required')" class="text-danger">
+                    Porcentaje requerido
+                  </p>
+                  <p *ngIf="Percent?.hasError('percent')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              <button type="button" [disabled]="!form.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

@@ -19,13 +19,13 @@ export class SoftService {
   public getSoftById(id:number) : Observable<Soft>{
     return this.http.get<Soft>(`${this.Url}/${id}`)
   }
-  public addSoft(soft:Soft): Observable<Soft>{
-    return this.http.post<Soft>(this.Url, soft)
+  public addSoft(softskill:Soft): Observable<Soft>{
+    return this.http.post<Soft>(this.Url, softskill)
   }
-  public updateSoft(soft:Soft): Observable<Soft>{
-    return this.http.put<Soft>(`${this.Url}/${soft.id}`, soft)
+  public updateSoft(softskill:Soft): Observable<Soft>{
+    return this.http.put<Soft>(`${this.Url}/${softskill.id}`, softskill)
   }
-  public deleteSoft(soft:Soft): Observable<Soft>{
-    return this.http.delete<Soft>(`${this.Url}/${soft.id}`)
+  public deleteSoft(softskill:Soft): Observable<Soft>{
+    return this.http.delete<Soft>(`${this.Url}/${softskill.id}`)
   }
 }

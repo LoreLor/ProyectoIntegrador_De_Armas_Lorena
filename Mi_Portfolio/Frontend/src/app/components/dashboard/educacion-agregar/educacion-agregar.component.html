@@ -79,7 +79,7 @@
                   </p>
               </div>
               </div>
-              <button (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
+              <button type="button" [disabled]="!form.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

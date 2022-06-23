@@ -23,7 +23,7 @@ export class ProyectosMostrarComponent implements OnInit {
   editarProyecto(idproyecto:number) : any {
     localStorage.setItem("idproyecto", idproyecto.toString());
     this.router.navigate(['dashboard/editarProyecto'])
-    localStorage.getItem("id")
+    localStorage.getItem("idproyecto")
     console.log(idproyecto)
     //window.location.reload()
   }
@@ -32,7 +32,6 @@ export class ProyectosMostrarComponent implements OnInit {
     this.http.deleteProyecto(proyecto)
       .subscribe(data =>{
       this.proyectos = this.proyectos.filter(p=>p !== proyecto)
-      this.router.navigate(["dashboard"])
     })
   }
 

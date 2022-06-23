@@ -1,3 +1,4 @@
+import { ExperienciaEditarComponent } from './components/dashboard/experiencia-editar/experiencia-editar.component';
 import { AcercaDeEditarComponent } from './components/dashboard/acerca-de-editar/acerca-de-editar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'dashboard/editarEducacion', component: EducacionEditarComponent},
   {path:'dashboard/editarHard', component: HardEditarComponent},
   {path:'dashboard/editarSoft', component: SoftEditarComponent},
+  {path:'dashboard/editarExperiencia', component: ExperienciaEditarComponent},
   {path:'dashboard/editarProyecto', component: ProyectosEditarComponent},
 
 

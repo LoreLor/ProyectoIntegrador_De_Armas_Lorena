@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/Educacion';
 import { EducacionService } from 'src/app/service/api/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-educacion-agregar',
@@ -24,7 +25,8 @@ export class EducacionAgregarComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.educacion)
+    //console.log(this.educacion)
+ 
   }
 
   get Nombre(){
@@ -41,11 +43,15 @@ export class EducacionAgregarComponent implements OnInit {
 
   guardar(event:Event): any{
     event.preventDefault;
-    this.http.addEducacion(this.educacion)
-      .subscribe(data => {
-        console.log(data)
-        alert("Educacion agregada con exito");
-        window.location.reload()
-      })
+    if(!this.educacion.nombre){
+      this.http.addEducacion(this.educacion)
+        .subscribe(data => {
+          console.log(data)
+          Swal.fire("Educacion agregada con exito");
+          window.location.reload()
+        })
+    }else{
+      Swal.fire('Ooops!!! ... Revisa tus Inputs')
+    }
   }
 }

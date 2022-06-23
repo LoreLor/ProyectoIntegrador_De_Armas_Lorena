@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { switchAll } from 'rxjs';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { ProyectosService } from 'src/app/service/api/proyectos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-proyectos-editar',
@@ -11,12 +14,13 @@ import { ProyectosService } from 'src/app/service/api/proyectos.service';
 export class ProyectosEditarComponent implements OnInit {
   proyecto:Proyecto = new Proyecto();
 
-  constructor(private router:Router, private http:ProyectosService) { }
+  constructor(private router:Router, private http:ProyectosService) {}
 
   ngOnInit(): void {
     this.editarProyecto()
     console.log(this.proyecto)
   }
+
 
   editarProyecto():any{
     let idproyecto:any=localStorage.getItem("idproyecto")
@@ -27,18 +31,19 @@ export class ProyectosEditarComponent implements OnInit {
     })  
   }
 
-  actualizar():any{
+  actualizar(event:Event):any{
+    event.preventDefault;
     if(this.proyecto.id){
       this.http.updateProyecto(this.proyecto)
       .subscribe(data =>{
         console.log(data)
-        alert("Datos modificados con exito");
+        Swal.fire("Datos modificados con exito");
         //window.location.reload()
         this.router.navigate(["dashboard"])
       })
 
     }else{
-      alert('El proyecto que intentas modificar no existe en base de datos')
+      Swal.fire('El proyecto que intentas modificar no existe en base de datos')
     }
   } 
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hard } from 'src/app/models/Hard';
 import { HardService } from 'src/app/service/api/hard.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-hard-agregar',
@@ -10,15 +12,31 @@ import { HardService } from 'src/app/service/api/hard.service';
 })
 export class HardAgregarComponent implements OnInit {
   hardskill:Hard = new Hard();
+  form:FormGroup;
 
-  constructor(private router:Router, private http:HardService) { }
+  constructor(private router:Router, private http:HardService, private FormBuilder:FormBuilder) {
+    this.form = this.FormBuilder.group(
+      {
+        title:['',[Validators.required]],
+        percent:['',[Validators.required, Validators.min(1), Validators.max(100)]]
+      }
+    )
+   }
 
   ngOnInit(): void {
-    console.log(this.hardskill)
+    //console.log(this.hardskill)
   }
 
-  guardar(){
-    
+  get Title(){
+    return this.form.get("title")
+  } 
+
+  get Percent(){
+    return this.form.get("percent")
+  }
+
+  guardar(event:Event){
+    event.preventDefault;
     if(this.hardskill.title){
     this.http.addHard(this.hardskill)
       .subscribe((data:any) => {
@@ -27,7 +45,7 @@ export class HardAgregarComponent implements OnInit {
       })
       window.location.reload()
     }else{
-      alert('El nombre de Hard skill que intentas registrar ya existe en BD ')
+      Swal.fire('Ooops!!! ... Revisa tus Inputs')
     }
     }
       

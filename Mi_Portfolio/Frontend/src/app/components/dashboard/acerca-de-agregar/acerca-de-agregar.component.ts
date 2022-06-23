@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/models/Persona';
 import { PersonaService } from 'src/app/service/api/persona.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-acerca-de-agregar',
@@ -27,7 +28,7 @@ export class AcercaDeAgregarComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.persona)
+    //console.log(this.persona)
   }
 
   get Nombres(){
@@ -51,13 +52,18 @@ export class AcercaDeAgregarComponent implements OnInit {
   }
 
   guardar(event:Event):any{
-    event.preventDefault;
-    this.http.addPersona(this.persona)
-      .subscribe(data => {
-        console.log(data)
-        alert("Persona agregada con exito");
-      })
+    if(this.persona.nombres){
+      event.preventDefault;
+      this.http.addPersona(this.persona)
+        .subscribe(data => {
+          console.log(data)
+          Swal.fire("Persona agregada con exito");
+        })
+    }else{
+      Swal.fire('Ooops!!! ... Revisa tus Inputs')
+    }
   }
+  
   
   changeImag(event:Event):any{
     if(event){

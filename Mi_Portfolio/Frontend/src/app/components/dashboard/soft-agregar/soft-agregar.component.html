@@ -21,7 +21,7 @@
           data-bs-parent="#accordionExample11"
         >
           <div class="accordion-body">
-            <form action="">
+            <form [formGroup]="form">
               <div class="form-group">
                 <label class="labelform" for="title">Nombre:</label>
                 <input
@@ -29,8 +29,17 @@
                   name="title"
                   class="form-control"
                   placeholder="introduce nombre de soft skill"
-                  [(ngModel)]="soft.title"
+                  formControlName="title"
+                  [ngClass]="{'is-invalid':Title?.errors && Title?.touched, 'is-valid':!Title?.errors && Title?.touched}"
                 />
+                <div *ngIf="Title?.errors && Title?.touched">
+                  <p *ngIf="Title?.hasError('required')" class="text-danger">
+                    Ingrese una Softskill
+                  </p>
+                  <p *ngIf="Title?.hasError('descripcion')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Descripcion:</label>
@@ -39,10 +48,19 @@
                   name="descripcion"
                   class="form-control"
                   placeholder="introduce una breve descripcion"
-                  [(ngModel)]="soft.descripcion"
+                  formControlName="descripcion"
+                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
                 />
+                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                    Ingrese breve descripcion de Softskill
+                  </p>
+                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              </div>
+              <button type="button" [disabled]="!form.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

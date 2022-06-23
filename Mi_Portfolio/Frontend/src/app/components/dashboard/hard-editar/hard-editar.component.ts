@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hard } from 'src/app/models/Hard';
 import { HardService } from 'src/app/service/api/hard.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-hard-editar',
@@ -10,13 +12,15 @@ import { HardService } from 'src/app/service/api/hard.service';
 })
 export class HardEditarComponent implements OnInit {
   hardskill:Hard= new Hard();
+  
 
-  constructor(private router:Router, private http:HardService) { }
+  constructor(private router:Router, private http:HardService) {}
 
   ngOnInit(): void {
     this.editarHard()
     console.log(this.hardskill)
   }
+
 
   editarHard():any{
     let idHard:any=localStorage.getItem("idHard")
@@ -27,11 +31,12 @@ export class HardEditarComponent implements OnInit {
     })
   }
 
-  actualizar():any{
+  actualizar(event:Event):any{
+    event.preventDefault;
     this.http.updateHard(this.hardskill)
     .subscribe(data => {
       console.log(data)
-      alert("HardSkill modificada con exito")  
+      Swal.fire("HardSkill modificada con exito")  
       this.router.navigate(['dashboard'])  
     })
   }

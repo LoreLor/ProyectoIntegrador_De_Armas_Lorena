@@ -22,16 +22,25 @@
         >
           <div class="accordion-body">
             <div class="atributos">
-            <form action="">
+            <form [formGroup]="form">
               <div class="form-group">
                 <label class="labelform" for="nombreTrabajo">Trabajo:</label>
                 <input
+                  class="form-control"
                   type="text"
                   name="nombreTrabajo"
-                  class="form-control"
+                  formControlName="nombreTrabajo"
                   placeholder="introduce un trabajo"
-                  [(ngModel)]="experiencia.nombreTrabajo"
+                  [ngClass]="{'is-invalid':NombreTrabajo?.errors && NombreTrabajo?.touched, 'is-valid':!NombreTrabajo?.errors && NombreTrabajo?.touched}"
                 />
+                <div *ngIf="NombreTrabajo?.errors && NombreTrabajo?.touched">
+                  <p *ngIf="NombreTrabajo?.hasError('required')" class="text-danger">
+                    Empleo requerido
+                  </p>
+                  <p *ngIf="NombreTrabajo?.hasError('nombreTrabajo')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="anios">Años:</label>
@@ -39,9 +48,18 @@
                   type="text"
                   name="anios"
                   class="form-control"
+                  formControlName="anios"
                   placeholder="introduce tiempo trabajado"
-                  [(ngModel)]="experiencia.anios"
+                  [ngClass]="{'is-invalid':Anios?.errors && Anios?.touched, 'is-valid':!Anios?.errors && Anios?.touched}"
                 />
+                <div *ngIf="Anios?.errors && Anios?.touched">
+                  <p *ngIf="Anios?.hasError('required')" class="text-danger">
+                    Tiempo trabajado
+                  </p>
+                  <p *ngIf="Anios?.hasError('anios')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+              </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Descripcion:</label>
@@ -49,11 +67,20 @@
                   type="text"
                   name="descripcion"
                   class="form-control"
-                  placeholder="institucion"
-                  [(ngModel)]="experiencia.descripcion"
+                  placeholder="empresa - otro"
+                  formControlName="descripcion"
+                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
                 />
+                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                    Ingrese Empresa - Organizacion - Otros
+                  </p>
+                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              </div>
+              <button type="button" [disabled]="!form.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

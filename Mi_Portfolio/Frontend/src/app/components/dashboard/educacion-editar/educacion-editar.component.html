@@ -20,7 +20,7 @@
           aria-labelledby="panelsStayOpen-headingOne5"
         >
           <div class="accordion-body">
-            <form [formGroup]="form">
+            <form active="">
               <div class="form-group">
                 <label class="labelform" for="nombre">Educacion-Carrera:</label>
                 <input
@@ -28,18 +28,8 @@
                   type="text"
                   name="nombre"
                   value={{educacion.nombre}}
-                  placeholder="Agregar carrera o educacion"
-                  formControlName="nombre"
-                  [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}"
-                />
-                <div *ngIf="Nombre?.errors && Nombre?.touched">
-                  <p *ngIf="Nombre?.hasError('required')" class="text-danger">
-                    Nombre de Carrera requerido
-                  </p>
-                  <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
-                    Ingrese un formato valido 
-                  </p>
-                </div>
+                  [(ngModel)]="educacion.nombre"
+                  />
               </div>
               <div class="form-group">
                 <label class="labelform" for="anios">Años:</label>
@@ -48,18 +38,8 @@
                   name="anios"
                   value={{educacion.anios}}
                   class="form-control"
-                  formControlName="anios"
-                  placeholder="tiempo de estudios o cursada"
-                  [ngClass]="{'is-invalid':Anios?.errors && Anios?.touched, 'is-valid':!Anios?.errors && Anios?.touched}"
-                />
-                <div *ngIf="Anios?.errors && Anios?.touched">
-                  <p *ngIf="Anios?.hasError('required')" class="text-danger">
-                    Duracion de estudios
-                  </p>
-                  <p *ngIf="Anios?.hasError('anios')" class="text-danger">
-                    Ingrese un formato valido 
-                  </p>
-              </div>
+                  [(ngModel)]="educacion.anios"
+                  />
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Institucion:</label>
@@ -68,20 +48,10 @@
                   name="descripcion"
                   value={{educacion.descripcion}}
                   class="form-control"
-                  placeholder="institucion"
-                  formControlName="descripcion"
-                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
-                />
-                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
-                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-                    Casa de estudios
-                  </p>
-                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
-                    Ingrese un formato valido 
-                  </p>
+                  [(ngModel)]="educacion.descripcion"
+                  />
               </div>
-              </div>
-              <button (click)="actualizar($event)" class="btn btn-ligth">
+              <button type="button" (click)="actualizar($event)" class="btn btn-ligth">
                 Actualizar
               </button>
             </form>
