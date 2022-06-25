@@ -1,13 +1,13 @@
 footer{
     max-width: 100%;
-    color:chartreuse;
+    color:cornsilk;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     text-align: center;
     box-shadow: 5px -5px 20px rgb(33, 34, 32);
     margin-top: 30px;
-    background-color: rgb(30, 31, 29);
+    background-color: rgb(12, 12, 12);
 
 }
