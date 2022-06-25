@@ -9,7 +9,7 @@
 }
 .circle{
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-area: auto;
   flex-wrap:wrap;
   align-items: center;
@@ -46,14 +46,14 @@ h1 {
   @media (max-width: 800px) {
     .circle {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 
   @media (max-width: 600px) {
     .circle {
       display: grid;
-      grid-template-columns: 1fr 1fr ;
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
