@@ -12,46 +12,27 @@ import Swal from 'sweetalert2';
 })
 export class EducacionAgregarComponent implements OnInit {
   educacion:Educacion = new Educacion();
-  form: FormGroup; 
 
-  constructor(private formBuilder:FormBuilder, private http:EducacionService) {
-    this.form = this.formBuilder.group(
-      {
-        nombre:['',[Validators.required]],
-        anios:['',[Validators.required]],
-        descripcion:['',[Validators.required, Validators.maxLength(225)]],     
-      }
-    )
-   }
+  constructor(private http:EducacionService) {}
 
   ngOnInit(): void {
     //console.log(this.educacion)
- 
-  }
-
-  get Nombre(){
-    return this.form.get("nombre")
-  }
-
-  get Anios(){
-    return this.form.get("anios")
-  }
-
-  get Descripcion(){
-    return this.form.get("descripcion")
   }
 
   guardar(event:Event): any{
-    event.preventDefault;
-    if(!this.educacion.nombre){
-      this.http.addEducacion(this.educacion)
-        .subscribe(data => {
-          console.log(data)
+    if(this.educacion.nombre){
+      event.preventDefault;
+        this.http.addEducacion(this.educacion)
+          .subscribe(data => {
+            console.log(data)
+            window.location.reload()
+          })
           Swal.fire("Educacion agregada con exito");
-          window.location.reload()
-        })
     }else{
       Swal.fire('Ooops!!! ... Revisa tus Inputs')
     }
   }
 }
+
+
+

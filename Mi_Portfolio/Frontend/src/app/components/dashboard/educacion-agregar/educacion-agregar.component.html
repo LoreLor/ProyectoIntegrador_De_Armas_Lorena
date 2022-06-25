@@ -21,22 +21,28 @@
           data-bs-parent="#accordionExample3"
         >
           <div class="accordion-body">
-            <form [formGroup]="form">
+            <form #educacionForm="ngForm">
               <div class="form-group">
                 <label class="labelform" for="nombre">Educacion-Carrera:</label>
                 <input
                   class="form-control"
-                  type="text"
+                  type ="text"
                   name="nombre"
+                  id="nombre"
+                  minlength="3"
+                  required
+                  pattern="[A-Za-z]*"
                   placeholder="Agregar carrera o educacion"
-                  formControlName="nombre"
-                  [ngClass]="{'is-invalid':Nombre?.errors && Nombre?.touched, 'is-valid':!Nombre?.errors && Nombre?.touched}"
+                  [(ngModel)]="educacion.nombre"
+                  #nombre="ngModel"
+                  ngControl="nombre"
+                  [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched, 'is-valid':!nombre?.errors && nombre?.touched}"
                 />
-                <div *ngIf="Nombre?.errors && Nombre?.touched">
-                  <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                <div *ngIf="nombre?.errors && nombre?.touched">
+                  <p *ngIf="nombre?.hasError('required')" class="text-danger">
                     Nombre de Carrera requerido
                   </p>
-                  <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
+                  <p *ngIf="nombre?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -46,16 +52,21 @@
                 <input
                   type="text"
                   name="anios"
+                  id="anios"
+                  required
                   class="form-control"
-                  formControlName="anios"
+                  minlength="3"
+                  [(ngModel)]="educacion.anios"
+                  #anios="ngModel"
+                  ngControl="anios"
                   placeholder="tiempo de estudios o cursada"
-                  [ngClass]="{'is-invalid':Anios?.errors && Anios?.touched, 'is-valid':!Anios?.errors && Anios?.touched}"
+                  [ngClass]="{'is-invalid':anios?.errors && anios?.touched, 'is-valid':!anios?.errors && anios?.touched}"
                 />
-                <div *ngIf="Anios?.errors && Anios?.touched">
-                  <p *ngIf="Anios?.hasError('required')" class="text-danger">
+                <div *ngIf="anios?.errors && anios?.touched">
+                  <p *ngIf="anios?.hasError('required')" class="text-danger">
                     Duracion de estudios
                   </p>
-                  <p *ngIf="Anios?.hasError('anios')" class="text-danger">
+                  <p *ngIf="anios?.hasError('anios')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
               </div>
@@ -65,21 +76,27 @@
                 <input
                   type="text"
                   name="descripcion"
+                  id="decripcion"
+                  minlength="3"
                   class="form-control"
                   placeholder="institucion"
-                  formControlName="descripcion"
-                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
+                  required
+                  pattern="[A-Za-z]*"
+                  [(ngModel)]="educacion.descripcion"
+                  #descripcion="ngModel"
+                  ngContrtol="descripcion"
+                  [ngClass]="{'is-invalid':descripcion?.errors && descripcion?.touched, 'is-valid':!descripcion?.errors && descripcion?.touched}"
                 />
-                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
-                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-                    Casa de estudios
+                <div *ngIf="descripcion?.errors && descripcion?.touched">
+                  <p *ngIf="descripcion?.hasError('required')" class="text-danger">
+                    Casa de estudios requerida
                   </p>
-                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
               </div>
               </div>
-              <button type="button" [disabled]="!form.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
+              <button type="button" [disabled]="!educacionForm.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

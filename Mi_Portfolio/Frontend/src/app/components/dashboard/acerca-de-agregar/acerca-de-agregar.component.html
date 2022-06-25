@@ -21,23 +21,28 @@
           data-bs-parent="#accordionExample2"
         >
           <div class="accordion-body">
-            <form [formGroup]="form">
+            <form #personaForm="ngForm">
               <div class="form-group">
                 <label class="labelform" for="nombres">Nombres:</label>
                 <input
                   class="form-control"
                   type="text"
+                  id="nombres"
                   name="nombres"
-                  value="nombres"
-                  formControlName="nombres"
+                  minlength="3"
+                  required
+                  pattern="[A-Za-z]*"
+                  [(ngModel)]="persona.nombres"
+                  #nombres="ngModel"
+                  ngControl="nombres"
                   placeholder="introduce tus nombres"
-                  [ngClass]="{'is-invalid':Nombres?.errors && Nombres?.touched, 'is-valid':!Nombres?.errors && Nombres?.touched}"
+                  [ngClass]="{'is-invalid':nombres?.errors && nombres?.touched, 'is-valid':!nombres?.errors && nombres?.touched}"
                 />
-                <div *ngIf="Nombres?.errors && Nombres?.touched">
-                  <p *ngIf="Nombres?.hasError('required')" class="text-danger">
+                <div *ngIf="nombres?.errors && nombres?.touched">
+                  <p *ngIf="nombres?.hasError('required')" class="text-danger">
                     Nombre o Nombres requeridos
                   </p>
-                  <p *ngIf="Nombres?.hasError('nombres')" class="text-danger">
+                  <p *ngIf="nombres?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -47,16 +52,23 @@
                 <input
                   type="text"
                   name="apellidos"
+                  id="apellidos"
                   class="form-control"
                   placeholder="introduce tus apellidos"
-                  formControlName="apellidos"
-                  [ngClass]="{'is-invalid':Apellidos?.errors && Apellidos?.touched, 'is-valid':!Apellidos?.errors && Apellidos?.touched}"
+                  minlength="3"
+                  required
+                  pattern="[A-Za-z]*"
+                  #apellidos="ngModel"
+                  ngControl="apellidos"
+                  placeholder="introduce tus apellidos"
+                  [(ngModel)]="persona.apellidos"
+                  [ngClass]="{'is-invalid':apellidos?.errors && apellidos?.touched, 'is-valid':!apellidos?.errors && apellidos?.touched}"
                 />
-                <div *ngIf="Apellidos?.errors && Apellidos?.touched">
-                  <p *ngIf="Apellidos?.hasError('required')" class="text-danger">
+                <div *ngIf="apellidos?.errors && apellidos?.touched">
+                  <p *ngIf="apellidos?.hasError('required')" class="text-danger">
                     Apellido o Apellidos requeridos
                   </p>
-                  <p *ngIf="Apellidos?.hasError('apellidos')" class="text-danger">
+                  <p *ngIf="apellidos?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -66,16 +78,21 @@
                 <input
                   type="text"
                   name="titulo"
+                  id="titulo"
                   class="form-control"
-                  formControlName="titulo"
+                  required
+                  pattern="[A-Za-z]*"
                   placeholder="ocupacion - formacion"
-                  [ngClass]="{'is-invalid':Titulo?.errors && Titulo?.touched, 'is-valid':!Titulo?.errors && Titulo?.touched}"
+                  ngControl="apellidos"
+                  [(ngModel)]="persona.titulo"
+                  #titulo="ngModel"
+                  [ngClass]="{'is-invalid':titulo?.errors && titulo?.touched, 'is-valid':!titulo?.errors && titulo?.touched}"
                 />
-                <div *ngIf="Titulo?.errors && Titulo?.touched">
-                  <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                <div *ngIf="titulo?.errors && titulo?.touched">
+                  <p *ngIf="titulo?.hasError('required')" class="text-danger">
                     Ocupacion requerida
                   </p>
-                  <p *ngIf="Titulo?.hasError('titulo')" class="text-danger">
+                  <p *ngIf="titulo?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -86,15 +103,20 @@
                   type="text"
                   name="descripcion"
                   class="form-control"
-                  formControlName="descripcion"
+                  id="descripcion"
+                  required
+                  pattern="[A-Za-z]*"
                   placeholder="introduce una breve descripcion acerca de ti"      
-                  [ngClass]="{'is-invalid':Descripcion?.errors && Descripcion?.touched, 'is-valid':!Descripcion?.errors && Descripcion?.touched}"
+                  ngControl="descripcion"
+                  #descripcion="ngModel"
+                  [(ngModel)]="persona.descripcion"
+                  [ngClass]="{'is-invalid':descripcion?.errors && descripcion?.touched, 'is-valid':!descripcion?.errors && descripcion?.touched}"
                 />
-                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
-                  <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                <div *ngIf="descripcion?.errors && descripcion?.touched">
+                  <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                     Descripcion requerida
                   </p>
-                  <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -106,22 +128,27 @@
                 <input
                   type="file"
                   name="imagenPerfil"
+                  id="imagenPerfil"
+                  required
                   class="form-control"
                   placeholder="introduce una imagen"
-                  formControlName="imagenPerfil"
                   (change)="changeImag($event)"
-                  [ngClass]="{'is-invalid':ImagenPerfil?.errors && ImagenPerfil?.touched, 'is-valid':!ImagenPerfil?.errors && ImagenPerfil?.touched}"
+                  ngControl="imagenPerfil"
+                  #imagenPerfil="ngModel"
+                  [(ngModel)]="persona.imagenPerfil"
+                  [ngClass]="{'is-invalid':imagenPerfil?.errors && imagenPerfil?.touched, 'is-valid':!imagenPerfil?.errors && imagenPerfil?.touched}"
                   />
-                  <div *ngIf="ImagenPerfil?.errors && ImagenPerfil?.touched">
-                    <p *ngIf="ImagenPerfil?.hasError('required')" class="text-danger">
-                      Foto requerida
-                    </p>
-                    <p *ngIf="ImagenPerfil?.hasError('imagenPerfil')" class="text-danger">
-                      Ingrese un formato valido 
-                    </p>
-                  </div>
+              
+                <div *ngIf="imagenPerfil?.errors && imagenPerfil?.touched">
+                  <p *ngIf="imagenPerfil?.hasError('required')" class="text-danger">
+                    Foto de Perfil requerida
+                  </p>
+                  <p *ngIf="imagenPerfil?.hasError('imagenPerfil')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
-              <button [disabled]="!form.valid" type="button" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
+              <button [disabled]="!personaForm.valid" type="button" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

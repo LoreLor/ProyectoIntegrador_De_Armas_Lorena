@@ -11,43 +11,22 @@ import Swal from 'sweetalert2';
 })
 export class ExperienciaAgregarComponent implements OnInit {
   experiencia:Experiencia = new Experiencia();
-  form: FormGroup; 
 
-  constructor(private http: ExperienciaService, private formBuilder:FormBuilder) {
-    this.form = this.formBuilder.group(
-      {
-        nombreTrabajo:['',[Validators.required]],
-        anios:['',[Validators.required]],
-        descripcion:['',[Validators.required, Validators.maxLength(225)]],     
-      }
-    )
-   }
+  constructor(private http: ExperienciaService) {}
 
   ngOnInit(): void {
     //console.log(this.experiencia)
   }
 
-  get NombreTrabajo(){
-    return this.form.get("nombreTrabajo")
-  }
-
-  get Anios(){
-    return this.form.get("anios")
-  }
-
-  get Descripcion(){
-    return this.form.get("descripcion")
-  }
-
   guardar(event:Event) : any {
     event.preventDefault;
-    if(this.experiencia.id){
+    if(this.experiencia.nombreTrabajo){
       this.http.addExperiencia(this.experiencia)
       .subscribe((data:any) => {
         console.log(data)
-        Swal.fire("Experiencia agregada con exito")
         window.location.reload()
       })
+      Swal.fire("Experiencia agregada con exito")
     }else{
       Swal.fire('Ooops!!! ... Revisa tus Inputs')
     }

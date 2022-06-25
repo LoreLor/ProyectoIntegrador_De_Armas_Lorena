@@ -35,7 +35,7 @@ export class SoftEditarComponent implements OnInit {
     this.http.updateSoft(this.softskill)
     .subscribe(data => {
       console.log(data)
-      Swal.fire("SoftSkill creada con exito")
+      Swal.fire("Soft Skill modificada con exito")
       this.router.navigate(['dashboard'])
     })
   }

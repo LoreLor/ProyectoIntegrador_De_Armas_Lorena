@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { switchAll } from 'rxjs';
 import { Proyecto } from 'src/app/models/Proyecto';
 import { ProyectosService } from 'src/app/service/api/proyectos.service';
 import Swal from 'sweetalert2';

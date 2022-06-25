@@ -40,7 +40,7 @@
  }
 
  .table{
-    font-size: small;
+    font-size: 10px;
 }
 
  
@@ -61,10 +61,13 @@
         display: block;
         width: 100%;
     }
+    .table{
+        font-size:10px;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .table{
-        font-size:x-small;
+        font-size:10px;
     }
 }

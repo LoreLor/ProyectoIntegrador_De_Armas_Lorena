@@ -12,39 +12,22 @@ import Swal from 'sweetalert2';
 })
 export class SoftAgregarComponent implements OnInit {
   soft:Soft = new Soft();
-  form:FormGroup;
 
-  constructor(private router:Router, private http: SoftService, private formBuilder:FormBuilder) { 
-    this.form = this.formBuilder.group(
-      {
-        title:['',[Validators.required]],
-        descripcion:['',[Validators.required]]
-      }
-    )
-  }
+  constructor(private http: SoftService) { }
 
   ngOnInit(): void {
     //console.log(this.soft)
   }
 
-  get Title(){
-    return this.form.get("title")
-  }
-
-  get Descripcion(){
-    return this.form.get("descripcion")
-  }
-
   guardar(event:Event){
     event.preventDefault;
-    if(this.soft.id){
+    if(this.soft.title){
       this.http.addSoft(this.soft)
         .subscribe(data => {
           console.log(data)
-          Swal.fire("Soft Skill agregada con exito");
-          this.router.navigate(["dashboard"])
           window.location.reload()
         })
+        Swal.fire("Soft Skill agregada con exito");
     }else{
       Swal.fire('Ooops!!! ... Revisa tus Inputs')
     }

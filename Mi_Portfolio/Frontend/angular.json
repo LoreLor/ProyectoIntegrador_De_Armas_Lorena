@@ -108,5 +108,8 @@
       }
     }
   },
-  "defaultProject": "Mi_Portfolio"
+  "defaultProject": "Mi_Portfolio",
+  "cli": {
+    "analytics": "9aa9079e-3cfd-4a73-bc83-9408f93751af"
+  }
 }
