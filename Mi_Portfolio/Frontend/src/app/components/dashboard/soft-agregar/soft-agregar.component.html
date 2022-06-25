@@ -29,7 +29,7 @@
                   type="text"
                   name="title"
                   id="title"
-                  pattern="[A-Za-z]*"
+                  
                   required 
                   [(ngModel)]="soft.title"
                   #title="ngModel"
@@ -41,7 +41,7 @@
                   <p *ngIf="title?.hasError('required')" class="text-danger">
                     Ingrese una Soft Skill
                   </p>
-                  <p *ngIf="title?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="title?.hasError('title')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -54,7 +54,7 @@
                   name="descripcion"
                   id="descripcion"
                   required 
-                  pattern="[A-Za-z]*"
+                  
                   placeholder="introduce una breve descripcion"
                   [(ngModel)]="soft.descripcion"
                   #descripcion="ngModel"
@@ -65,7 +65,7 @@
                   <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                     Ingrese breve descripcion de Softskill
                   </p>
-                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('descripcion')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
               </div>

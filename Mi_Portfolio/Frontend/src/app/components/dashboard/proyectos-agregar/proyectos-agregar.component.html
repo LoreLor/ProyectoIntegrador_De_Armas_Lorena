@@ -29,7 +29,7 @@
                     name="nombre"
                     id="nombre"
                     required
-                    pattern="[A-Za-z]*"
+                    
                     [(ngModel)]="proyecto.nombre"
                     #nombre="ngModel"
                     ngControl="nombre"
@@ -41,7 +41,7 @@
                   <p *ngIf="nombre?.hasError('required')" class="text-danger">
                     nombre del Proyecto requerido
                   </p>
-                  <p *ngIf="nombre?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="nombre?.hasError('nombre')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -77,7 +77,7 @@
                     class="form-control"
                     id="descripcion"
                     required
-                    pattern="[A-Za-z]*"
+                  
                     [(ngModel)]="proyecto.descripcion"
                     #descripcion="ngModel"
                     placeholder="descripcion del proyecto"
@@ -88,7 +88,7 @@
                       <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                         Ingrese descripcion del proyecto
                       </p>
-                      <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                      <p *ngIf="descripcion?.hasError('descripcion')" class="text-danger">
                         Ingrese un formato valido 
                       </p>
                     </div>

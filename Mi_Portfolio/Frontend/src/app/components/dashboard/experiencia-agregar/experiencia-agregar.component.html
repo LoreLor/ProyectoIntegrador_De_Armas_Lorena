@@ -32,7 +32,7 @@
                   name="nombreTrabajo"
                   minlength="3"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   [(ngModel)]="experiencia.nombreTrabajo"
                   #nombreTrabajo="ngModel"
                   ngControl="nombreTrabajo"
@@ -43,7 +43,7 @@
                   <p *ngIf="nombreTrabajo?.hasError('required')" class="text-danger">
                     Empleo requerido
                   </p>
-                  <p *ngIf="nombreTrabajo?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="nombreTrabajo?.hasError('nombreTrabajo')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -77,7 +77,7 @@
                   name="descripcion"
                   class="form-control"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   placeholder="empresa - otro"
                   ngControl="descripcion"
                   [(ngModel)]="experiencia.descripcion"
@@ -88,7 +88,7 @@
                   <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                     Ingrese Empresa - Organizacion - Otros
                   </p>
-                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('descripcion')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
               </div>

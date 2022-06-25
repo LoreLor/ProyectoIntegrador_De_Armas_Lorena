@@ -31,7 +31,7 @@
                   name="nombres"
                   minlength="3"
                   required
-                  pattern="[A-Za-z]*"
+            
                   [(ngModel)]="persona.nombres"
                   #nombres="ngModel"
                   ngControl="nombres"
@@ -42,7 +42,7 @@
                   <p *ngIf="nombres?.hasError('required')" class="text-danger">
                     Nombre o Nombres requeridos
                   </p>
-                  <p *ngIf="nombres?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="nombres?.hasError('nombres')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -57,7 +57,7 @@
                   placeholder="introduce tus apellidos"
                   minlength="3"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   #apellidos="ngModel"
                   ngControl="apellidos"
                   placeholder="introduce tus apellidos"
@@ -68,7 +68,7 @@
                   <p *ngIf="apellidos?.hasError('required')" class="text-danger">
                     Apellido o Apellidos requeridos
                   </p>
-                  <p *ngIf="apellidos?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="apellidos?.hasError('apellidos')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -81,9 +81,9 @@
                   id="titulo"
                   class="form-control"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   placeholder="ocupacion - formacion"
-                  ngControl="apellidos"
+                  ngControl="titulo"
                   [(ngModel)]="persona.titulo"
                   #titulo="ngModel"
                   [ngClass]="{'is-invalid':titulo?.errors && titulo?.touched, 'is-valid':!titulo?.errors && titulo?.touched}"
@@ -92,7 +92,7 @@
                   <p *ngIf="titulo?.hasError('required')" class="text-danger">
                     Ocupacion requerida
                   </p>
-                  <p *ngIf="titulo?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="titulo?.hasError('titulo')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -105,7 +105,7 @@
                   class="form-control"
                   id="descripcion"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   placeholder="introduce una breve descripcion acerca de ti"      
                   ngControl="descripcion"
                   #descripcion="ngModel"
@@ -116,7 +116,7 @@
                   <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                     Descripcion requerida
                   </p>
-                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('descripcion')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>

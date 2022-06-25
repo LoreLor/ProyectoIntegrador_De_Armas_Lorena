@@ -31,7 +31,7 @@
                   id="nombre"
                   minlength="3"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   placeholder="Agregar carrera o educacion"
                   [(ngModel)]="educacion.nombre"
                   #nombre="ngModel"
@@ -42,7 +42,7 @@
                   <p *ngIf="nombre?.hasError('required')" class="text-danger">
                     Nombre de Carrera requerido
                   </p>
-                  <p *ngIf="nombre?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="nombre?.hasError('nombre')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
                 </div>
@@ -81,7 +81,7 @@
                   class="form-control"
                   placeholder="institucion"
                   required
-                  pattern="[A-Za-z]*"
+                  
                   [(ngModel)]="educacion.descripcion"
                   #descripcion="ngModel"
                   ngContrtol="descripcion"
@@ -91,7 +91,7 @@
                   <p *ngIf="descripcion?.hasError('required')" class="text-danger">
                     Casa de estudios requerida
                   </p>
-                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="descripcion?.hasError('descripcion')" class="text-danger">
                     Ingrese un formato valido 
                   </p>
               </div>
