@@ -23,22 +23,22 @@ public class PersonaController {
     @Autowired
     private PersonaService service;
 
-    @GetMapping("/persona")
+    @GetMapping(value="/persona")
     public List<Persona>mostrarPersona(){
         return service.mostrarPersona();
     }
 
-    @GetMapping("/persona/{id}")
+    @GetMapping(value="/persona/{id}")
         public Persona  mostrarPersonaId(@PathVariable Long id){
             return service.mostrarPersonaId(id);
     }
 
-    @PostMapping("/persona")
+    @PostMapping(value="/persona")
     public Persona agregarPersona(@RequestBody Persona persona){
         return service.agregarPersona(persona);
     }
 
-    @PutMapping("/persona/{id}")
+    @PutMapping(value="/persona/{id}")
     public Persona editar(@RequestBody Persona persona, @PathVariable Long id){
          //persona.setId(persona.getId());
          //persona.setNombres(persona.getNombres());
@@ -46,7 +46,7 @@ public class PersonaController {
         return service.editarPersona(persona);
     }
 
-    @DeleteMapping("/persona/{id}")
+    @DeleteMapping(value="/persona/{id}")
         public Persona borrar(@PathVariable Long id){
             return service.eliminarPersona(id);
         }

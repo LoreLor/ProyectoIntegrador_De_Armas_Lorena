@@ -40,7 +40,7 @@ public class ProyectosController {
         return service.agregarProyectos(proyectos);
     }
 
-    @PutMapping(value="proyectos/{id}")
+    @PutMapping(value="/proyectos/{id}")
     public Proyectos editarProyectos(@PathVariable long id, @RequestBody Proyectos proyectos) { 
         return service.agregarProyectos(proyectos);
     }
