@@ -24,9 +24,9 @@ public class UserRepositoryTests {
 	@Test
 	public void testCreateUser() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String rawPassword ="example1234";  
+		String rawPassword ="lolo12345";  
 		String encodePassword= passwordEncoder.encode(rawPassword);
-		User newUser = new User( "example@gmail.com", encodePassword);
+		User newUser = new User( "lolor@gmail.com", encodePassword);
 		User savedUser = userRepo.save(newUser);
 		assertThat(savedUser).isNotNull();
 		assertThat(savedUser.getId()).isGreaterThan(0);
