@@ -1,3 +1,4 @@
+import { URLBack } from 'src/app/server';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -7,7 +8,7 @@ import { Hard } from 'src/app/models/Hard';
   providedIn: 'root'
 })
 export class HardService {
-  Url="http://localhost:8080/api/hardskills";
+  Url=`${URLBack}/api/hardskills`;
 
   constructor(private http:HttpClient) { }
 

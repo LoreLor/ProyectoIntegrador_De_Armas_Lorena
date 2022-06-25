@@ -15,10 +15,12 @@ export class DashboardComponent implements OnInit {
   constructor(private router:Router, private http: PersonaService) { }
 
   ngOnInit(): void {
-  
   }
 
   logout():void{
+    sessionStorage.removeItem('currentUser');
     this.router.navigate([''])
+    console.log('me fui')
   }
 }
+

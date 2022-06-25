@@ -2,7 +2,7 @@
     <div class="card body">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne1">
                     <button 
                         class="accordion-button" 
                         type="button" 
@@ -14,63 +14,63 @@
                         EDITAR
                     </button>
                 </h2>
-                <div id="editarPersona" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingOne">
+                <div id="editarPersona" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne1">
                     <div class="accordion-body">
-                        <form action="">
+                        <form active="">
                             <div class="form-group">
                                 <label class="labelform" for="nombres">Nombres:</label>
                                 <input 
-                                    type="text" 
-                                    id="nombres" 
-                                    name="nombres" 
                                     class="form-control"
+                                    type="text" 
+                                    name="nombres" 
+                                    placeholder="introduce tus nombres"
                                     [(ngModel)]="persona.nombres"
-                                    >
+                                    />
                             </div>
                             <div class="form-group">
                                 <label class="labelform" for="apellidos">Apellidos:</label>
                                 <input 
-                                    type="text" 
-                                    id="apellidos" 
-                                    name="apellidos" 
                                     class="form-control"
+                                    type="text"
+                                    name="apellidos"
+                                    placeholder="introduce tus apellidos"
                                     [(ngModel)]="persona.apellidos"
-                                    >
+                                    />
                             </div>
                             <div class="form-group">
                                 <label class="labelform" for="titulo">Titulo:</label>
-                                <input 
-                                    type="text" 
-                                    id="titulo" 
-                                    name="titulo" 
+                                <input
+                                    type="text"
+                                    name="titulo"
                                     class="form-control"
+                                    placeholder="ocupacion - formacion"
                                     [(ngModel)]="persona.titulo"
-                                    >
+                                    />
                             </div>
                             <div class="form-group">
                                 <label class="labelform" for="descripcion">Descripcion:</label>
-                                <input 
-                                    type="text" 
-                                    id="descripcion" 
-                                    name="descripcion" 
+                                <input
+                                    type="text"
+                                    name="descripcion"
                                     class="form-control"
-                                    [(ngModel)]="persona.descripcion"
-                                    >
+                                    placeholder="introduce una breve descripcion acerca de ti"   
+                                    [(ngModel)]="persona.descripcion" 
+                                    />
+                                
                             </div>
                             <div class="form-group">
                                 <label class="labelform" for="imagenPerfil">Imagen de Perfil:</label>
                                 <input 
-                                    type="file" 
-                                    id="imagenPerfil" 
-                                    name="imagenPerfil" 
                                     class="form-control"
-                                    placeholder="introduce una imagen" 
+                                    type="file"  
+                                    name="imagenPerfil" 
                                     (change)="changeImag($event)"
                                     [(ngModel)]="persona.imagenPerfil"
-                                    >
+                                />
+                                
                             </div>
-                            <button (click)="actualizar()" class="btn btn-ligth">Actualizar</button>
+                            <button type="button" (click)="actualizar($event)" class="btn btn-ligth">Actualizar</button>
                         </form>
                     </div>
                 </div>

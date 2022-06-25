@@ -41,7 +41,7 @@ public class HardSkillsController {
     }
 
     @PutMapping(value="/hardskills/{id}")
-    public HardSkills editarHardSkills(@PathVariable Long id, @RequestBody HardSkills hardskills) {
+    public HardSkills editarHardSkills(@RequestBody HardSkills hardskills, @PathVariable Long id ) {
         // hardskills.setId(hardskills.getId());
         // hardskills.setTitle(hardskills.getTitle());
         // hardskills.setPercent(hardskills.getPercent());

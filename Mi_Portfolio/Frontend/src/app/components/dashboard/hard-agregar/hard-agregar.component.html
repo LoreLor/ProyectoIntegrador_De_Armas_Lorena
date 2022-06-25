@@ -1,8 +1,8 @@
 <div class="container col-md-6">
   <div class="card body">
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample7">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne9">
           <button
             class="accordion-button"
             type="button"
@@ -17,36 +17,62 @@
         <div
           id="agregarHard"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOne9"
+          data-bs-parent="#accordionExample7"
         >
           <div class="accordion-body">
-            <form action="">
+            <form #hardForm="ngForm">
               <div class="form-group">
-                <label class="labelform" for="nombre">Nombre:</label>
+                <label class="labelform" for="title">Nombre:</label>
                 <input
-                  type="text"
-                  id="title"
-                  name="title"
                   class="form-control"
-                  placeholder="introduce nombre de tu skill"
+                  type="text"
+                  name="title"
+                  id="title"
+                  required
+                  pattern="[A-Za-z]*"          
+                  placeholder="introduce nombre de tu hard skill"
+                  ngControl="title"
                   [(ngModel)]="hardskill.title"
+                  #title="ngModel"
+                  [ngClass]="{'is-invalid':title?.errors && title?.touched, 'is-valid':!title?.errors && title?.touched}"
                 />
+                <div *ngIf="title?.errors && title?.touched">
+                  <p *ngIf="title?.hasError('required')" class="text-danger">
+                    Nombre de Hard Skill requerido
+                  </p>
+                  <p *ngIf="title?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="percent">Pocentaje:</label>
                 <input
+                  class="form-control"
                   type="number"
                   min="1"
                   max="100"
-                  id="percent"
                   name="percent"
-                  class="form-control"
-                  placeholder="introduce un porcentaje"
+                  id="percent"
+                  required
+                  pattern="[0-9]*"
+                  ngControl="percent"
                   [(ngModel)]="hardskill.percent"
+                  #percent="ngModel"
+                  placeholder="introduce un porcentaje"
+                  [ngClass]="{'is-invalid':percent?.errors && percent?.touched, 'is-valid':!percent?.errors && percent?.touched}"
                 />
+                <div *ngIf="percent?.errors && percent?.touched">
+                  <p *ngIf="percent?.hasError('required')" class="text-danger">
+                    Porcentaje requerido
+                  </p>
+                  <p *ngIf="percent?.hasError('pattern')|| percent?.hasError('min') || percent?.hasError('max')" class="text-danger">
+                    Ingrese un formato valido min=1 - max=100
+                  </p>
+                </div>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              <button type="button" [disabled]="!hardForm.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

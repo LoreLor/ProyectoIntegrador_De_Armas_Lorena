@@ -1,8 +1,8 @@
 <div class="container col-md-6">
   <div class="card body">
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample3">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne4">
           <button
             class="accordion-button"
             type="button"
@@ -17,45 +17,86 @@
         <div
           id="agregarEducacion"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOne4"
+          data-bs-parent="#accordionExample3"
         >
           <div class="accordion-body">
-            <form action="">
+            <form #educacionForm="ngForm">
               <div class="form-group">
                 <label class="labelform" for="nombre">Educacion-Carrera:</label>
                 <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
                   class="form-control"
-                  placeholder="carrera o educacion"
+                  type ="text"
+                  name="nombre"
+                  id="nombre"
+                  minlength="3"
+                  required
+                  pattern="[A-Za-z]*"
+                  placeholder="Agregar carrera o educacion"
                   [(ngModel)]="educacion.nombre"
+                  #nombre="ngModel"
+                  ngControl="nombre"
+                  [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched, 'is-valid':!nombre?.errors && nombre?.touched}"
                 />
+                <div *ngIf="nombre?.errors && nombre?.touched">
+                  <p *ngIf="nombre?.hasError('required')" class="text-danger">
+                    Nombre de Carrera requerido
+                  </p>
+                  <p *ngIf="nombre?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="anios">Años:</label>
                 <input
                   type="text"
-                  id="anios"
                   name="anios"
+                  id="anios"
+                  required
                   class="form-control"
-                  placeholder="tiempo de estudios o cursada"
+                  minlength="3"
                   [(ngModel)]="educacion.anios"
+                  #anios="ngModel"
+                  ngControl="anios"
+                  placeholder="tiempo de estudios o cursada"
+                  [ngClass]="{'is-invalid':anios?.errors && anios?.touched, 'is-valid':!anios?.errors && anios?.touched}"
                 />
+                <div *ngIf="anios?.errors && anios?.touched">
+                  <p *ngIf="anios?.hasError('required')" class="text-danger">
+                    Duracion de estudios
+                  </p>
+                  <p *ngIf="anios?.hasError('anios')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+              </div>
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Institucion:</label>
                 <input
                   type="text"
-                  id="descripcion"
                   name="descripcion"
+                  id="decripcion"
+                  minlength="3"
                   class="form-control"
                   placeholder="institucion"
+                  required
+                  pattern="[A-Za-z]*"
                   [(ngModel)]="educacion.descripcion"
+                  #descripcion="ngModel"
+                  ngContrtol="descripcion"
+                  [ngClass]="{'is-invalid':descripcion?.errors && descripcion?.touched, 'is-valid':!descripcion?.errors && descripcion?.touched}"
                 />
+                <div *ngIf="descripcion?.errors && descripcion?.touched">
+                  <p *ngIf="descripcion?.hasError('required')" class="text-danger">
+                    Casa de estudios requerida
+                  </p>
+                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              </div>
+              <button type="button" [disabled]="!educacionForm.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

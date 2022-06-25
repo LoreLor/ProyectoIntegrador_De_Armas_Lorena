@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hard } from 'src/app/models/Hard';
 import { HardService } from 'src/app/service/api/hard.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-hard-agregar',
@@ -11,24 +13,23 @@ import { HardService } from 'src/app/service/api/hard.service';
 export class HardAgregarComponent implements OnInit {
   hardskill:Hard = new Hard();
 
-  constructor(private router:Router, private http:HardService) { }
+  constructor(private http:HardService) {}
 
   ngOnInit(): void {
-    console.log(this.hardskill)
+    //console.log(this.hardskill)
   }
 
-  guardar(){
-    
+  guardar(event:Event): any{
+    event.preventDefault;
     if(this.hardskill.title){
     this.http.addHard(this.hardskill)
       .subscribe((data:any) => {
         console.log(data)
-        alert("Hard Skill agregado con exito");
+        window.location.reload()
       })
-      window.location.reload()
+      Swal.fire("Hard Skill agregado con exito");
     }else{
-      alert('El nombre de Hard skill que intentas registrar ya existe en BD ')
+      Swal.fire('Ooops!!! ... Revisa tus Inputs')
     }
-    }
-      
+  }  
 }

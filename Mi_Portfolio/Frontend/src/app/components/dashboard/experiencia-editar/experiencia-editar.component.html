@@ -16,44 +16,42 @@
         </h2>
         <div
           id="editarExperiencia"
-          class="accordion-collapse collapse"
+          class="accordion-collapse collapse show"
           aria-labelledby="panelsStayOpen-headingOne"
         >
           <div class="accordion-body">
-            <form action="">
+            <form active="">
               <div class="form-group">
                 <label class="labelform" for="nombreTrabajo">Carrera:</label>
                 <input
-                  type="text"
-                  id="nombreTrabajo"
-                  name="nombreTrabajo"
                   class="form-control"
+                  type="text"
+                  name="nombreTrabajo"
+                  value={{experiencia.nombreTrabajo}}
                   [(ngModel)]="experiencia.nombreTrabajo"
-                />
+                  />
               </div>
               <div class="form-group">
                 <label class="labelform" for="anios">Años:</label>
                 <input
-                  type="text"
-                  id="anios"
-                  name="anios"
                   class="form-control"
-                  placeholder="introduce los años de cursada"
+                  type="text"
+                  name="anios"
+                  value={{experiencia.anios}}
                   [(ngModel)]="experiencia.anios"
-                />
+                  />
               </div>
               <div class="form-group">
                 <label class="labelform" for="descripcion">Descripcion:</label>
                 <input
                   type="text"
-                  id="descripcion"
                   name="descripcion"
                   class="form-control"
-                  placeholder="institucion"
+                  value={{experiencia.descripcion}}
                   [(ngModel)]="experiencia.descripcion"
-                />
+                  />
               </div>
-              <button (click)="actualizar()" class="btn btn-ligth">
+              <button  type="button" (click)="actualizar($event)" class="btn btn-ligth">
                 Actualizar
               </button>
             </form>

@@ -6,7 +6,7 @@
     <div class="card body">
     
         <div class="atributos">
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample6">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
@@ -24,10 +24,10 @@
                 id="mostrarExperiencia"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
+                data-bs-parent="#accordionExample6"
               >
                 <div class="accordion-body">
-        <div class="atributos">
+        
             <table class="table table-group-divider">
                 <thead>
                   <tr>
@@ -40,7 +40,7 @@
                 </thead>
                 <tbody>  
                   <tr *ngFor="let experiencia of experiencias">
-                    <th scope="row">{{experiencia.id}}</th>
+                    <th scope="row" key="experiencia.id">{{experiencia.id}}</th>
                     <td>{{experiencia.nombreTrabajo}}</td>
                     <td>{{experiencia.anios}}</td>
                     <td>{{experiencia.descripcion}}</td>

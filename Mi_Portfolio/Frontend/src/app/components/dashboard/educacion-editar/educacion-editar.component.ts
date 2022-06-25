@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/Educacion';
 import { EducacionService } from 'src/app/service/api/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-educacion-editar',
@@ -27,17 +29,18 @@ export class EducacionEditarComponent implements OnInit {
     })  
   }
 
-  actualizar(): any{
+  actualizar(event:Event): any{
+    event.preventDefault;
     if(this.educacion.id){
     this.http.updateEducacion(this.educacion)
     .subscribe(data =>{
       console.log(data)
-        alert("Datos modificados con exito");
+        Swal.fire("Datos modificados con exito");
         //window.location.reload()
     })  
     this.router.navigate(['dashboard'])
   }else{
-    alert('Los datos que intentas modificar no existen en la BD')
+    Swal.fire('Los datos que intentas modificar no existen en la BD')
   }
 }
 }

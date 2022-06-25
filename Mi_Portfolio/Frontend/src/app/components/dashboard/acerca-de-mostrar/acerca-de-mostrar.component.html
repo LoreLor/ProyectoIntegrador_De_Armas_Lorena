@@ -5,9 +5,9 @@
 </div>
 <div class="container col-md-6">
   <div class="card body">
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample1">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne3">
           <button
             class="accordion-button"
             type="button"
@@ -22,11 +22,11 @@
         <div
           id="mostrarPersona"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOne3"
+          data-bs-parent="#accordionExample1"
         >
           <div class="accordion-body" *ngFor="let persona of personas">
-            <label>
+            <label key="persona.id">
               <strong>ID: </strong>
               {{ persona.id }}
             </label>

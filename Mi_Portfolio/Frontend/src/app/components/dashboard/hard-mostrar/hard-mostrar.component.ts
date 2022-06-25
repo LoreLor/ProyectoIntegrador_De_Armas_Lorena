@@ -31,9 +31,8 @@ export class HardMostrarComponent implements OnInit {
 
   eliminarHard(hardskill: Hard) {
     this.http.deleteHard(hardskill)
-      .subscribe((data: any) => {
+      .subscribe(data => {
         this.hardskills = this.hardskills.filter(p => p !== hardskill)
-        this.router.navigate(["dashboard"])
       })
   }
 }

@@ -1,8 +1,14 @@
+import { EducacionService } from 'src/app/service/api/educacion.service';
+import { ProyectosService } from 'src/app/service/api/proyectos.service';
+import { HardService } from './service/api/hard.service';
+import { ExperienciaService } from 'src/app/service/api/experiencia.service';
+import { InterceptorService } from './service/interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './components/header/header.component';
 import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
 import { BannerComponent } from './components/banner/banner.component';
@@ -35,8 +41,11 @@ import { SoftAgregarComponent } from './components/dashboard/soft-agregar/soft-a
 import { SoftMostrarComponent } from './components/dashboard/soft-mostrar/soft-mostrar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PersonaService } from './service/api/persona.service';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { SoftService } from './service/api/soft.service';
+
 
 
 @NgModule({
@@ -71,12 +80,14 @@ import { HttpClientModule } from '@angular/common/http';
     SoftAgregarComponent,
     SoftMostrarComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       // radius: 100,
@@ -90,6 +101,12 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     PersonaService,
+    ExperienciaService,
+    HardService,
+    SoftService,
+    ProyectosService,
+    EducacionService,
+    {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}
   ],
   bootstrap: [AppComponent]
 })

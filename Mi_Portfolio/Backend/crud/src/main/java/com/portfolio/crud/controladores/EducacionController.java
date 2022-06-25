@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
 
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins="http://localhost:4200", maxAge = 3600)
@@ -40,10 +41,10 @@ public class EducacionController {
 
     @PutMapping("/educacion/{id}")
     public Educacion editarEducacion(@RequestBody Educacion educacion, @PathVariable Long id){
-        // educacion.setId(educacion.getId());
-        // educacion.setNombre(educacion.getNombre());
-        // educacion.setAnios(educacion.getAnios());
-        // educacion.setDescripcion(educacion.getDescripcion());
+         educacion.setId(educacion.getId());
+         educacion.setNombre(educacion.getNombre());
+         educacion.setAnios(educacion.getAnios());
+         educacion.setDescripcion(educacion.getDescripcion());
         return service.editarEducacion(educacion);
     }
 

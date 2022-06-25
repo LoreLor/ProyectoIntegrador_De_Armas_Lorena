@@ -1,3 +1,4 @@
+import { URLBack } from 'src/app/server';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Persona } from 'src/app/models/Persona';
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonaService {
-  Url="http://localhost:8080/api/persona";
+  Url=`${URLBack}/api/persona`;
 
   constructor(private http: HttpClient) { }
 

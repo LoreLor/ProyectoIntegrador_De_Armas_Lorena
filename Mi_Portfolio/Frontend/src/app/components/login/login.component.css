@@ -1,0 +1,70 @@
+
+
+.card{
+    margin-bottom:20px;
+    border:none;
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #caeea1;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
+
+.box input[type="email"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: rgb(58, 165, 8);
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1 {
+    color: rgb(43, 221, 8);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.box input[type="email"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: rgb(25, 119, 6);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.box input[type="submit"]:hover {
+    background: #3bcc2e;
+    color:white;
+    font-weight: 700;
+}
+

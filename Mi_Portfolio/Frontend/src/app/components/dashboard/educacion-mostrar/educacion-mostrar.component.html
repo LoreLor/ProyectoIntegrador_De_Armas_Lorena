@@ -6,16 +6,16 @@
     <div class="card body">
       
         <div class="atributos">
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample5">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
+              <h2 class="accordion-header" id="headingOne6">
                 <button
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#mostrarEducacion"
                   aria-expanded="false"
-                  aria-controls="collapseOne"
+                  aria-controls="collapseOne6"
                 >
                   MOSTRAR
                 </button>
@@ -23,8 +23,8 @@
               <div
                 id="mostrarEducacion"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
+                aria-labelledby="headingOne6"
+                data-bs-parent="#accordionExample5"
               >
                 <div class="accordion-body">
         <div class="atributos">
@@ -40,7 +40,7 @@
                 </thead>
                 <tbody>  
                   <tr *ngFor="let educacion of educaciones">
-                    <th scope="row">{{educacion.id}}</th>
+                    <th scope="row" key="educacion.id">{{educacion.id}}</th>
                     <td>{{educacion.nombre}}</td>
                     <td>{{educacion.anios}}</td>
                     <td>{{educacion.descripcion}}</td>

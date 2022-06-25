@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/Experiencia';
 import { ExperienciaService } from 'src/app/service/api/experiencia.service';
 
@@ -12,25 +13,26 @@ export class ExperienciaMostrarComponent implements OnInit {
   experiencias:Experiencia[] = [];
   experiencia:Experiencia = new Experiencia();
 
-  constructor(private http: ExperienciaService) { }
+  constructor(private http: ExperienciaService, private router:Router) { }
 
   ngOnInit(): void {
     this.http.getExperiencia()
-    .subscribe((data:any) => 
+    .subscribe(data => 
       this.experiencias = data
     )
   }
 
-  editarExperiencia(id:number) : any {
-    localStorage.setItem("id", id.toString());
-    console.log(id)
-    localStorage.getItem("id")
-    window.location.reload()
+  editarExperiencia(idExperiencia:number) : any {
+    localStorage.setItem("idExperiencia", idExperiencia.toString());
+    this.router.navigate(['dashboard/editarExperiencia'])
+    console.log(idExperiencia)
+    localStorage.getItem("idExperiencia")
+    //window.location.reload()
   }
 
   eliminarExperiencia(experiencia:Experiencia) : any{
     this.http.deleteExperiencia(experiencia)
-    .subscribe((data:any)=>{
+    .subscribe(data=>{
       this.experiencias=this.experiencias.filter(p=>p !== experiencia)
     })
   }

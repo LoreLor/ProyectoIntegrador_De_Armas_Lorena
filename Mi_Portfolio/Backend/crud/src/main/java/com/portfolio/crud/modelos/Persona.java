@@ -37,7 +37,7 @@ public class Persona {
 /* CONSTRUCTOR */
     public Persona() {}
 
-    public Persona(Long id, String nombres, String apellidos, String email, String imagen_perfil, String titulo, String descripcion) {
+    public Persona(Long id, String nombres, String apellidos, String imagen_perfil, String titulo, String descripcion) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;

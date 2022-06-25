@@ -1,8 +1,8 @@
 <div class="container col-md-6">
   <div class="card body">
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample11">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne13">
           <button
             class="accordion-button"
             type="button"
@@ -17,34 +17,60 @@
         <div
           id="agregarSoft"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOne13"
+          data-bs-parent="#accordionExample11"
         >
           <div class="accordion-body">
-            <form action="">
+            <form #softForm="ngForm">
               <div class="form-group">
                 <label class="labelform" for="title">Nombre:</label>
                 <input
-                  type="text"
-                  id="title"
-                  name="title"
                   class="form-control"
-                  placeholder="introduce nombre de soft skill"
+                  type="text"
+                  name="title"
+                  id="title"
+                  pattern="[A-Za-z]*"
+                  required 
                   [(ngModel)]="soft.title"
+                  #title="ngModel"
+                  ngControl="title"
+                  placeholder="introduce nombre de soft skill"
+                  [ngClass]="{'is-invalid':title?.errors && title?.touched, 'is-valid':!title?.errors && title?.touched}"
                 />
+                <div *ngIf="title?.errors && title?.touched">
+                  <p *ngIf="title?.hasError('required')" class="text-danger">
+                    Ingrese una Soft Skill
+                  </p>
+                  <p *ngIf="title?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
               </div>
               <div class="form-group">
-                <label class="labelform" for="descripcion">Descripcion:</label>
+                <label class="labelform" for="descripcion">descripcion:</label>
                 <input
-                  type="text"
-                  id="descripcion"
-                  name="descripcion"
                   class="form-control"
+                  type="text"
+                  name="descripcion"
+                  id="descripcion"
+                  required 
+                  pattern="[A-Za-z]*"
                   placeholder="introduce una breve descripcion"
                   [(ngModel)]="soft.descripcion"
+                  #descripcion="ngModel"
+                  ngControl="descripcion"
+                  [ngClass]="{'is-invalid':descripcion?.errors && descripcion?.touched, 'is-valid':!descripcion?.errors && descripcion?.touched}"
                 />
+                <div *ngIf="descripcion?.errors && descripcion?.touched">
+                  <p *ngIf="descripcion?.hasError('required')" class="text-danger">
+                    Ingrese breve descripcion de Softskill
+                  </p>
+                  <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
               </div>
-              <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+              </div>
+              <button type="button" [disabled]="!softForm.valid" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
             </form>
           </div>
         </div>

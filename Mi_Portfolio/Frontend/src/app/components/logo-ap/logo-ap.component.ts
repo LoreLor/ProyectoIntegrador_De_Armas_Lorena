@@ -16,6 +16,6 @@ export class LogoAPComponent implements OnInit {
 
   login():void{
     Swal.fire('email: example@gmail.com - password: example1234')
-    this.router.navigate(["dashboard"])
+    this.router.navigate(["login"])
   }
 }

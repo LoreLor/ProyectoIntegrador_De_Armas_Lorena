@@ -1,3 +1,4 @@
+import { ExperienciaEditarComponent } from './components/dashboard/experiencia-editar/experiencia-editar.component';
 import { AcercaDeEditarComponent } from './components/dashboard/acerca-de-editar/acerca-de-editar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,15 +8,20 @@ import { EducacionEditarComponent } from './components/dashboard/educacion-edita
 import { HardEditarComponent } from './components/dashboard/hard-editar/hard-editar.component';
 import { SoftEditarComponent } from './components/dashboard/soft-editar/soft-editar.component';
 import { ProyectosEditarComponent } from './components/dashboard/proyectos-editar/proyectos-editar.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'dashboard', component: DashboardComponent},
+  {path:'home', component: HomeComponent},
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'login', component: LoginComponent},
+  {path:'dashboard', component: DashboardComponent}, 
   {path:'dashboard/editarPersona', component: AcercaDeEditarComponent},
   {path:'dashboard/editarEducacion', component: EducacionEditarComponent},
   {path:'dashboard/editarHard', component: HardEditarComponent},
   {path:'dashboard/editarSoft', component: SoftEditarComponent},
+  {path:'dashboard/editarExperiencia', component: ExperienciaEditarComponent},
   {path:'dashboard/editarProyecto', component: ProyectosEditarComponent},
+
 
 
 ];

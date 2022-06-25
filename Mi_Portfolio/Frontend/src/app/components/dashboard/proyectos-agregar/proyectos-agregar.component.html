@@ -1,8 +1,8 @@
 <div class="container col-md-6">
     <div class="card body">
-      <div class="accordion" id="accordionExample">
+      <div class="accordion" id="accordionExample9">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+          <h2 class="accordion-header" id="headingOne11">
             <button
               class="accordion-button"
               type="button"
@@ -17,59 +17,108 @@
           <div
             id="agregarProyecto"
             class="accordion-collapse collapse"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
+            aria-labelledby="headingOne11"
+            data-bs-parent="#accordionExample9"
           >
             <div class="accordion-body">
-              <form action="controller" enctype="multipart/form-data">
+              <form #proyectoForm="ngForm">
                 <div class="form-group">
                   <label class="labelform" for="nombre">Proyecto:</label>
                   <input
                     type="text"
-                    id="nombre"
                     name="nombre"
-                    class="form-control"
-                    placeholder="proyecto"
+                    id="nombre"
+                    required
+                    pattern="[A-Za-z]*"
                     [(ngModel)]="proyecto.nombre"
-                  />
-                </div>
-                <div class="form-group">
-                  <label class="labelform" for="stack">Stack:</label>
-                  <input
-                    type="text"
-                    id="stack"
-                    name="stack"
+                    #nombre="ngModel"
+                    ngControl="nombre"
                     class="form-control"
-                    placeholder="tech empleadas"
-                    [(ngModel)]="proyecto.stack"
-                  />
+                    placeholder="nombre del proyecto"
+                    [ngClass]="{'is-invalid':nombre?.errors && nombre?.touched, 'is-valid':!stack?.errors && stack?.touched}"
+                />
+                <div *ngIf="nombre?.errors && nombre?.touched">
+                  <p *ngIf="nombre?.hasError('required')" class="text-danger">
+                    nombre del Proyecto requerido
+                  </p>
+                  <p *ngIf="nombre?.hasError('pattern')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
                 </div>
                 <div class="form-group">
-                  <label class="labelform" for="descripcion">Descripcion:</label>
+                  <label class="labelform" for="stack">stack:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="stack"
+                    id="stack"
+                    required 
+                    [(ngModel)]="proyecto.stack"
+                    ngControl="stack"
+                    #stack="ngModel"
+                    placeholder="tech empleadas"
+                    [ngClass]="{'is-invalid':stack?.errors && stack?.touched, 'is-valid':!stack?.errors && stack?.touched}"
+                />
+                <div *ngIf="stack?.errors && stack?.touched">
+                  <p *ngIf="stack?.hasError('required')" class="text-danger">
+                    Ingrese las Techs empleadas 
+                  </p>
+                  <p *ngIf="stack?.hasError('stack')" class="text-danger">
+                    Ingrese un formato valido 
+                  </p>
+                </div>
+                </div>
+                <div class="form-group">
+                  <label class="labelform" for="descripcion">descripcion:</label>
                   <input
                     type="text"
-                    id="descripcion"
                     name="descripcion"
                     class="form-control"
-                    placeholder="descripcion del proyecto"
+                    id="descripcion"
+                    required
+                    pattern="[A-Za-z]*"
                     [(ngModel)]="proyecto.descripcion"
-                  />
+                    #descripcion="ngModel"
+                    placeholder="descripcion del proyecto"
+                    ngControl="descripcion"
+                    [ngClass]="{'is-invalid':descripcion?.errors && descripcion?.touched, 'is-valid':!descripcion?.errors && descripcion?.touched}"
+                    />
+                    <div *ngIf="descripcion?.errors && descripcion?.touched">
+                      <p *ngIf="descripcion?.hasError('required')" class="text-danger">
+                        Ingrese descripcion del proyecto
+                      </p>
+                      <p *ngIf="descripcion?.hasError('pattern')" class="text-danger">
+                        Ingrese un formato valido 
+                      </p>
+                    </div>
                 </div>
                 <div class="form-group">
                   <label class="labelform" for="imagenProyecto"
-                    >Imagen del Proyecto:</label
-                  >
+                    >Imagen del Proyecto:</label>
                   <input
                     type="file"
-                    id="imagenProyecto"
                     name="imagenProyecto"
+                    id="imagenProyecto"
+                    required
                     class="form-control"
                     placeholder="introduce una captura de tu proyecto"
-                    (change)="changeImag($event)"
                     [(ngModel)]="proyecto.imagenProyecto"
-                  />
+                    #imagenProyecto="ngModel"
+                    ngControl="imagenProyecto"
+                    (change)="changeImag($event)"
+                    [ngClass]="{'is-invalid':imagenProyecto?.errors && imagenProyecto?.touched, 'is-valid':!imagenProyecto?.errors && imagenProyecto?.touched}"
+                    />
+                    <div *ngIf="imagenProyecto?.errors && imagenProyecto?.touched">
+                      <p *ngIf="imagenProyecto?.hasError('required')" class="text-danger">
+                        Ingrese una Captura del proyecto
+                      </p>
+                      <p *ngIf="imagenProyecto?.hasError('imagenProyecto')" class="text-danger">
+                        Ingrese un formato valido 
+                      </p>
+                    </div>
                 </div>
-                <button (click)="guardar()" class="btn btn-ligth">Guardar</button>
+                <button [disabled]="!proyectoForm.valid" type="button" (click)="guardar($event)" class="btn btn-ligth">Guardar</button>
               </form>
             </div>
           </div>
