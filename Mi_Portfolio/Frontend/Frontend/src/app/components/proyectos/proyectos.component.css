@@ -1,0 +1,78 @@
+.row{
+    padding: 10px;
+}
+
+.contenedor{
+    width: auto;
+}
+
+.parte1, .parte2{
+    display: inline-block;
+    text-align:justify;
+}
+
+h3{
+  color: darkgreen;
+}
+
+#img-proyecto {
+  display: flex;
+  margin-bottom:25%;
+  margin-left: 5px;
+  object-fit: fill;
+  border-radius: 2em 0;
+  box-shadow: 10px 10px 30px rgb(13, 14, 13);
+  animation-name: rotate-in-center;
+  animation-duration: 10.2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+
+
+}
+
+@keyframes rotate-in-center {
+  0%{
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100%{
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+
+
+.row{
+  max-width: 100%;
+  background-color: rgb(215, 247, 203);
+  margin-top: 25px;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-radius: 2em 0;
+}
+
+h1 {
+    color: rgb(18, 19, 18);
+    text-shadow: rgb(19, 240, 11) 5px -2px 3px ;
+    font-weight: 800;
+    animation-duration: 6s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+ 

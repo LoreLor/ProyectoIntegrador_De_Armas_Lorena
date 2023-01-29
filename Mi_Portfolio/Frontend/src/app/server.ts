@@ -1,1 +1,0 @@
-export const URLBack: any = 'http://localhost:8080'

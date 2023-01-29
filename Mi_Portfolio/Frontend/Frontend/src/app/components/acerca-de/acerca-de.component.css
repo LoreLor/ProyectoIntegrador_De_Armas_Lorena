@@ -1,0 +1,64 @@
+ #fotoPerfil {
+   margin-top: 20px;
+   width: 100%;
+   border-radius: 2em 0;
+   box-shadow: 8px 8px 8px rgb(28, 71, 9);
+
+ }
+
+ .row {
+   padding: 25px;
+   max-width: 100%;
+   background-color: rgb(215, 247, 203);
+   margin-top: 25px;
+   margin-left: 8%;
+   margin-right: 8%;
+   border-radius: 2em 0;
+ }
+
+ /*etiqueta nombre*/
+ #nombre {
+   text-align: center;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 1.5rem;
+   margin-top: 60px;
+   color: rgb(18, 19, 18);
+   text-shadow: rgb(19, 240, 11) 5px -2px 3px  5px -2px 3px;
+   font-weight: 800;
+ }
+
+ /*etiqueta fullstack*/
+ #titulo {
+   font-weight: 700;
+   font-size: 1.6rem;
+   margin-top: 30px;
+   color: rgb(18, 19, 18);
+   text-shadow: rgb(240, 160, 11) 5px -2px 3px ;
+
+ }
+
+ h1,
+ h2 {
+   text-align: center;
+   animation-duration: 3.5s;
+   animation-name: slidein;
+   text-shadow: rgb(19, 240, 11) 5px -2px 3px ;
+ }
+
+ .acerca {
+   margin-top: 3rem;
+   display: flex;
+   align-items: center;
+ }
+
+ @keyframes slidein {
+   from {
+     margin-left: 100%;
+     width: 300%
+   }
+
+   to {
+     margin-left: 0%;
+     width: 100%;
+   }
+ }

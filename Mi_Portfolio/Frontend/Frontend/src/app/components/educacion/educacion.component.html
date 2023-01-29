@@ -1,0 +1,14 @@
+<div class="row">
+    <h1>Educacion</h1>
+    <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <ul  *ngFor="let educacion of educaciones">
+                <li key="educacion.id">
+                    <h2>{{educacion.nombre}}</h2> ~ <h3>{{educacion.anios}}</h3>
+                    <p>{{educacion.descripcion}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+

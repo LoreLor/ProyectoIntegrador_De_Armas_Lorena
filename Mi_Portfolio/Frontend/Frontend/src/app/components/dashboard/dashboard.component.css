@@ -1,0 +1,48 @@
+.titulo{
+    color: rgb(43, 221, 8);
+    padding-top: 5%;
+  }
+
+.container{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.botonContenedor{
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 9.5%;
+}
+
+.btn{
+    background-color: #d2f50b;
+    border-color: #28a708;
+    color:#05215e ;
+    font-weight: 600;
+}
+.btn:hover{
+    background: linear-gradient(90deg, #169b04, #c8f036);
+    border: linear-gradient(90deg, #169b04, #c3f021);
+    color:rgb(243, 237, 236);
+    font-weight: 600;
+    transform: scale(1.3);
+}
+.persona{
+    margin-bottom: 5%;
+}
+
+.educacion{
+    margin-bottom: 5%;
+}
+.hard{
+    margin-bottom: 5%;
+}
+.soft{
+    margin-bottom: 5%;
+}
+.experiencia{
+    margin-bottom: 5%;
+}
+.proyectos{
+    margin-bottom: 5%;
+}
